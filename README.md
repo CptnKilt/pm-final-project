@@ -28,6 +28,16 @@ _What is your product concept, who is it for, and what's the single bet you're m
 
 ___
 
+## Run the project workspace
+
+The repository includes a dependency-free project dashboard and an Alloy-ready Docker Compose setup.
+
+```bash
+docker compose -f docker-compose.alloy.yaml up -d
+```
+
+Open `http://localhost:3000`. The service exposes a health check at `http://localhost:3000/health`.
+
 ## How to submit
 
 - Turn the deliverable files into your final deck: run the **Final Presentation Generator** (linked from the Module 6 deck) to build a single-file HTML deck, or paste your files into an AI tool like **Gamma** or **Canva** (see `06-launch/final-presentation.md`).
