@@ -1,15 +1,39 @@
-# Competitive Analysis & Journey Map (Module 2)
+# Future State Journey — StreamLine Spotlight
 
-## Responses
-- **Role, who are you solving for? (the specific user segment or profile):** A 41-year-old self-identified film enthusiast who still actively uses the platform but is increasingly unconvinced it understands him.
-- **Goal, what is this user ultimately trying to achieve?:** He wants to be understood as an individual with specific taste, not sorted into a genre bucket and fed more of the same.
-- **Friction, the main barrier (moment of misery) stopping them from succeeding:** "The 'Because you watched' row is a joke, it recommended three more action sequels because I watched one. I'm not a genre, I'm a person. I miss when a human curator would surface a hidden gem." This is corroborated by BUG-1091 (near-duplicate, low-diversity recommendations), so his frustration isn't just sentiment — it's a verified defect in the curation logic. Marcus is still present, which makes him the more urgent persona: he's naming the exact failure (loss of "a human curator") before he becomes a Tom. He represents the moment right before the hook's "by the time users start solving that problem elsewhere" — he hasn't left yet, but he's already nostalgic for a version of the product that told him what was worth watching.
-- **External tools, the outside platforms or tools the user is forced to use:** Based on the data there are no tools that are listed that the user is using as a work around. It is infered that the user is using web search engines to discover titles to watch.
-- **The process, the 3 to 5 manual steps the user takes to get the job done:**
-  1. Bypasses the "Because You Watched" row entirely
-  2. Seeks recommendations outside the platform
-  3. Arrives at StreamLine with a title already decided
-  4. Uses the platform as a delivery mechanism, not a discovery mechanism
-- **Core frustration, the exact moment the process feels most “broken”:** The specific instant is captured in his own account: he watches one film, and the very next thing the platform shows him is three more entries from the same genre bucket — "recommended three more action sequels because I watched one."
-- **The evidence, a specific quote or behavior from the research that proves this:** I'm not a genre, I'm a person. I miss when a human curator would surface a hidden gem.
-- **Your journey map, a shareable link, or the map file you committed (e.g. journey-map.html):** _(not filled in)_
+**Persona:** Tom, 52, cancelled after years on the platform — now a satisfied customer of a competitor's two-email-a-week curation service.
+
+**Strategy:** Restore brand authority and win back users by prioritizing human-led curation and restoration over mass-market scale.
+
+---
+
+## Stage 1: Re-Entry
+
+- **User Action:** Opens a Spotlight invite email instead of the app's endless home screen. → Trust engaged before he has to scroll.
+- **Internal State:** Skeptical, testing whether anything has actually changed.
+- **Pain Point Addressed:** The 20-minute scroll-and-close moment his competitor workaround eliminated entirely.
+
+## Stage 2: First Curated Pick
+
+- **User Action:** Lands in a named curator's bounded collection of 3–5 picks. → Confident choice made in under a minute.
+- **Internal State:** Relief — cautious optimism that this feels like the old app.
+- **Pain Point Addressed:** "It became a warehouse" — catalog overwhelm replaced with an editorial point of view.
+
+## Stage 3: Habit Rebuilt
+
+- **User Action:** Returns weekly to Spotlight's new drops, follows the curator's voice. → A good evening becomes expected, not searched for.
+- **Internal State:** Trust compounding again, instead of eroding session by session.
+- **Pain Point Addressed:** The compounding trust deficit that made him stop opening the app.
+
+## Stage 4: Authority Reclaimed
+
+- **User Action:** Cancels the competitor's email digest; recommends Spotlight to friends. → StreamLine wins back the "trusted guide" role.
+- **Internal State:** Loyal and vindicated — the subscription is worth it again.
+- **Pain Point Addressed:** The full substitution: a competitor with no library beat StreamLine on trust alone.
+
+---
+
+## Competitive Advantages Over the Manual Workaround
+
+1. **On-demand, not weekly** — Curated picks available any night, not bound to a fixed email cadence.
+2. **Discovery and playback, one app** — No switching platforms between finding a pick and watching it.
+3. **Curation plus full catalog depth** — Trusted picks backed by 15,000 titles; the email has none.
