@@ -1,17 +1,28 @@
-# Hypothesis & Success Metrics
+# Hypothesis & Success Metrics (Module 3)
 
-> **Module 3 · ★ Deliverable 3.** Repo file `03-analytics/hypothesis-and-metrics.md` — part of your submission.
-> Do the lab in the **Module 3 · Exercise Guide** (linked from the Module 3 deck), then click **⬇ Download .md** — it saves as this exact file. Commit it here.
-> It feeds the **Problem, Value & Hypothesis** slide of your Module 6 final deck.
+## Pre-work · Hypothesis check
+- **Role , who you are solving for (from M2):** A 52-year-old long-time subscriber who cancelled last year and now watches films picked by a competitor.
+- **Goal , what this user is ultimately trying to achieve:** Good evenings without the work of searching for them. Inferred from "quality of my evenings went down" and from him watching both of the two weekly picks
+- **Friction / moment of misery , the specific pain blocking their goal:** The catalog turned into a "warehouse." As the volume went up, nothing helped him find what was worth his time, so he switched to a service that sends him two hand-picked films a week.
+- **Current workaround , the external tool or manual process they rely on (M2):** Using another streaming service
+- **Problem Hook , your one-sentence framing of the business crisis (M1):** StreamLine is losing its most valuable users — not gradually demoting them to passive players, but losing them from the platform altogether — because it stopped telling them what's worth watching, and by the time users start solving that problem elsewhere, they're not reliably coming back at all.
+- **Value Proposition , the outcome your initiative promised to deliver (M1):** For high-engagement, taste-driven viewers who used to treat StreamLine as a discovery authority and now only use it to press play on titles they found elsewhere, we will build StreamLine Spotlight: a dedicated, human-curated space inside the app — bounded collections, named curators, real editorial point of view — that restores the feeling of a trusted guide inside a platform built for scale, without shrinking the mass-market library that funds it because the window to own the "trusted taste" position is closing. Every month StreamLine waits, specialized competitors get further ahead in owning that narrative with exactly the segment StreamLine can least afford to lose — and repositioning against an entrenched competitor always costs more than establishing the position first.
 
-## Finalized product hypothesis
+## Read your data snapshots
+- **Does the funnel data confirm your M2 friction point, or does it tell a different story? Note where the numbers align with the qualitative pain you found and where they diverge.:** The funnel partially confirms my M2 friction. The drop from browsing to playing, where roughly 60% of browsers never press play, and the 7-point fall in searched-then-played both fit a discovery problem: users can't find something worth their time. The 21% DAU decline is consistent with my hook that high-value users are leaving. But the data diverges in two ways. First, the steepest drop is after play starts: 62% of starts never reach 30 minutes. That points to a problem with the quality of picks, not only with finding them. Second, the 23% fall in session length shows remaining users are also disengaging, which complicates my claim that users are leaving rather than becoming passive. There is also a scope limit. This data is mobile-only and covers only active users, while my persona is a churned, likely TV-based viewer. I need churn and cohort data by segment and device before treating this as confirmation
+- **Do the retention patterns align with the workaround your M2 persona used to find content? Note what the Mo. 0→1 drop suggests about the onboarding experience your persona described as frustrating.:** Retention aligns with my persona's workaround. He left for a service that pushes two curated films a week, and the Spotlight cohorts, which get a similar bounded, curated experience, retain better at every point measured. The gap over the Full Library grows from 11 points at Month 1 to 18 at Month 3, which suggests curation builds a lasting habit rather than a one-time bump. The Month 0→1 drop is still the largest leak for every cohort (21–26 points even with Spotlight), which suggests new users meet the "warehouse" problem before they have enough history for recommendations to help. That points toward making curated picks the centre of onboarding. Two limits: my persona was a lapsed long-time subscriber, not a new user, so these cohorts don't show whether Spotlight would win back users like him. And the Spotlight cohorts are winter sign-ups, so seasonality could explain part of the lift.
+- **Does the LTV gap and the content mix (61% trending for Wanderers) confirm the moment of misery your persona described? Note which segment your persona is in and whether the data confirms their pain.:** The content mix supports the "warehouse" moment of misery. Wanderers get 61% of their viewing from trending, the default when nothing tells them what is worth watching, and they show the largest churn improvement when exposed to Spotlight (22 points). My persona, though, fits the Power User profile: taste-driven, high-engagement and curation-first (58% curated). This segment is described as low-churn, yet my persona churned. That suggests either survivorship bias (lapsed Power Users aren't counted) or that he drifted into Wanderer-like behavior before cancelling. So the data confirms the pain, but mainly for Wanderers, not for the segment my persona represents. A rough estimate (share × churn reduction × LTV) puts Wanderers ahead of Casual Browsers in revenue protected, though the churn baseline and exposure method aren't stated. This challenges my hook's focus on "most valuable" users: Spotlight's strongest case may be as a guide for the undecided mass market, which is larger in total impact.
+- **Does the low adoption confirm your persona is burdened by tools they don’t use? Note whether the low scheduling adoption (42%) for coordinators matches your M2 moment of misery.:** _(not filled in)_
+- **Does the workflow data match the manual process or hack you documented in M2? Note whether the specific drop-offs or time gaps explain why your persona avoids the digital tool.:** _(not filled in)_
+- **Look at the CSAT heatmap. Which specific cell most directly maps to your persona’s friction? Note how the NPS trend justifies the urgency of your M1 Problem Hook.:** _(not filled in)_
 
-> Based on [qual + quant evidence], I believe that [solving X] for [persona] will result in [outcome], as measured by a [X%] change in [success metric]. I will protect [guardrail metric] and make a go/no-go decision after [decision window].
-
-## Success metrics
-
-| Metric | Type | Target | Why it matters |
-|---|---|---|---|
-| _North-star_ | | _____ | _____ |
-| _Leading indicator_ | | _____ | _____ |
-| _Guardrail_ | | _____ | _____ |
+## Step 3 · Craft your hypothesis
+- **Qualitative evidence (from M2) , quote the specific friction / moment of misery for your persona:** _(not filled in)_
+- **Quantitative evidence (from M3) , name the metric or data point that confirms the pain; cite the number:** _(not filled in)_
+- **Persona , role, goal, and the friction you confirmed in the reconciliation steps:** _(not filled in)_
+- **Problem you are solving , one sentence describing the specific friction this initiative removes:** _(not filled in)_
+- **Strategic outcome , what behaviour change do you expect, and how does it map to retention / revenue / churn?:** _(not filled in)_
+- **Primary success metric (initiative signal) , the leading indicator that tells you the gap is closing:** _(not filled in)_
+- **Guardrail metric (product signal) , the metric that must NOT drop; it protects your existing base:** _(not filled in)_
+- **Decision window , how much time or data before you scale, pivot, or kill? minimum threshold to proceed?:** _(not filled in)_
+- **Draft your full hypothesis sentence , one to three sentences; quote the metric, name the persona, name the outcome:** _(not filled in)_
