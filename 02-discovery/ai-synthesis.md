@@ -4,7 +4,7 @@
 - **Moment of misery / red flag #1 (e.g., “user gave up after 3 tries”):** Cross-device sync failure (My List + Resume Playback)
 - **Moment of misery / red flag #2:** Recommendation quality masking as personalization
 - **Moment of misery / red flag #3:** Mood/Context gap - Just tell me what is good to watch
-- **Product Health & Insights Summary (Claude's output):
+- **Product Health & Insights Summary (Claude's output):**
 
 # Product Health & Insights Summary: StreamLine Spotlight
 
