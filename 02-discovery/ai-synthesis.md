@@ -5,7 +5,7 @@
 - **Moment of misery / red flag #2:** Recommendation quality masking as personalization
 - **Moment of misery / red flag #3:** Mood/Context gap - Just tell me what is good to watch
 - **Product Health & Insights Summary (Claude's output):
--
+
 # Product Health & Insights Summary: StreamLine Spotlight
 
 ## Executive Summary
