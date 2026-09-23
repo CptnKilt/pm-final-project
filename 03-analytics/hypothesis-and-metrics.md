@@ -17,12 +17,57 @@
 - **Look at the CSAT heatmap. Which specific cell most directly maps to your persona’s friction? Note how the NPS trend justifies the urgency of your M1 Problem Hook.:** _(not filled in)_
 
 ## Step 3 · Craft your hypothesis
-- **Qualitative evidence (from M2) , quote the specific friction / moment of misery for your persona:** _(not filled in)_
-- **Quantitative evidence (from M3) , name the metric or data point that confirms the pain; cite the number:** _(not filled in)_
-- **Persona , role, goal, and the friction you confirmed in the reconciliation steps:** _(not filled in)_
-- **Problem you are solving , one sentence describing the specific friction this initiative removes:** _(not filled in)_
-- **Strategic outcome , what behaviour change do you expect, and how does it map to retention / revenue / churn?:** _(not filled in)_
-- **Primary success metric (initiative signal) , the leading indicator that tells you the gap is closing:** _(not filled in)_
-- **Guardrail metric (product signal) , the metric that must NOT drop; it protects your existing base:** _(not filled in)_
-- **Decision window , how much time or data before you scale, pivot, or kill? minimum threshold to proceed?:** _(not filled in)_
-- **Draft your full hypothesis sentence , one to three sentences; quote the metric, name the persona, name the outcome:** _(not filled in)_
+- **Qualitative evidence (from M2) , quote the specific friction / moment of misery for your persona:** UXR-04, long-time subscriber (52), cancelled: He described the catalog as having "became a warehouse" and said the "quality of my evenings went down." As the library grew, nothing helped him find what was worth his time, so he moved to a competitor that sends two hand-picked films a week. He watches both.
+- **Quantitative evidence (from M3) , name the metric or data point that confirms the pain; cite the number:** Primary: Wanderers (41% of the base) get 61% of their viewing from Trending and only 18% from Curated. When exposed to Spotlight, their churn drops by 22 points compared with non-exposed Wanderers, the largest improvement of any segment (Snapshot 3). With no guide to what's worth watching, users default to Trending and drift away. Once they get a curated guide, they stay.
+
+Supporting: Spotlight cohorts retain better, and the gap widens over time: +11 points at Month 1 and +18 points at Month 3 (Dec 52% vs. Nov 34%) (Snapshot 2). Before Spotlight, discovery was also weakening: content searched then played fell from 41% to 34%, and 30+ minute sessions fell from 19% to 11% (Snapshot 1).
+- **Persona , role, goal, and the friction you confirmed in the reconciliation steps:** Persona: A 52-year-old long-time subscriber who cancelled and now watches the two films a week hand-picked by a competitor (UXR-04).
+
+Role: A taste-driven viewer who wants a trusted guide to what's worth watching. His profile resembles a Power User (58% curated viewing). The data shows the same need most strongly among Wanderers, 41% of the base, who have no guide and default to Trending.
+
+Goal: Good evenings without the work of searching for them.
+
+Confirmed friction: As the catalog grew, it "became a warehouse" with nothing pointing to what's worth watching. Users fall back on Trending, engage less, and leave. The data confirms this:
+
+Wanderers get 61% of their viewing from Trending, and their churn drops 22 points with Spotlight.
+Spotlight cohorts retain 18 points better by Month 3.
+Searched-then-played fell from 41% to 34%.
+
+What changed from M2: The friction holds, but the segment shifted. The strongest evidence comes from undecided, mass-market users, not only taste-driven ones like the persona. Lapsed Power Users aren't visible in the M3 data.
+- **Problem you are solving , one sentence describing the specific friction this initiative removes:** Viewers can't tell what's worth their time in an ever-growing catalog, so they fall back on Trending, drift away, and leave.
+- **Strategic outcome , what behaviour change do you expect, and how does it map to retention / revenue / churn?:** Behavior change: Viewers stop defaulting to Trending and start their evenings from a small set of curated picks. Wanderers shift from 18% toward Casual-level curated viewing (~31%) and come back more often than once a week, building a weekly habit around the picks, as the persona did with his two-a-week service.
+
+How it maps:
+
+Retention: Spotlight cohorts reach 52% by Month 3, compared with 34% for Full Library (+18 points). The target is to hold or widen that gap and cut the Month 0→1 drop by putting curated picks into onboarding.
+Churn: −22 points for Wanderers and −14 points for Casual Browsers when exposed to Spotlight. These two segments are 78% of the base.
+Revenue: A rough estimate (segment share × churn reduction × monthly revenue per user) gives about $135 protected per 100 users per month, roughly 12% of monthly revenue. About 56% comes from Wanderers and 44% from Casual Browsers.
+
+Leading indicators: Wanderers' curated share of viewing, sessions per week, and Month 1 retention for new cohorts.
+- **Primary success metric (initiative signal) , the leading indicator that tells you the gap is closing:** Primary success metric: Wanderers' curated share of viewing, meaning the % of Wanderer play-starts that come from Spotlight or curated collections instead of Trending.
+
+Baseline: 18% (Snapshot 3)
+Target: 31% within two quarters, which is the Casual Browser level
+Why it's leading: It measures the friction directly. Users who start from a trusted pick instead of defaulting to Trending are the ones Snapshot 3 shows churning 22 points less. It moves weeks before churn or retention numbers can.
+- **Guardrail metric (product signal) , the metric that must NOT drop; it protects your existing base:** Guardrail metric: Power User sessions per week
+
+Baseline: 4.8× (Snapshot 3)
+Threshold: Must not fall below about 4.6× (a drop of more than 5%)
+Why this one: Power Users are 22% of the base but about 29% of revenue, and they have the highest LTV ($14.20). They already churn little and rely on curation (58%). The risk is that reshaping the app around Spotlight for Wanderers disrupts how your best users already find and watch content. If their frequency slips, Spotlight is winning the mass market at the expense of your most valuable segment.
+- **Decision window , how much time or data before you scale, pivot, or kill? minimum threshold to proceed?:** Decision window: 12 weeks. Run a randomized test with Wanderers split into Spotlight-exposed and control groups. That fixes the self-selection and seasonality problems in the Snapshot 2–3 data, and 12 weeks gives two new-user cohorts time to show Month 1 retention.
+
+Minimum threshold to proceed (all three must hold):
+
+Wanderers' curated share of viewing is ≥25% (baseline 18%, final target 31%)
+Month 1 retention for exposed cohorts is ≥10 points above control
+Power User sessions per week stay ≥4.6×
+
+Scale: All three are met. Roll Spotlight out to all Wanderers and Casual Browsers, and make curated picks part of onboarding.
+
+Pivot:
+
+If curated share rises but retention lift is under 5 points, people are clicking but not staying. Rework curation quality and depth.
+If the Power User guardrail is breached, change where Spotlight sits in the app rather than dropping it.
+
+Kill: At week 12, curated share has moved less than 3 points (still ≤21%) and there's no retention lift. Wanderers aren't taking the guide.
+- **Draft your full hypothesis sentence , one to three sentences; quote the metric, name the persona, name the outcome:** Based on UXR-04's description of the catalog as a "warehouse" and the Snapshot 3 finding that Wanderers churn 22 points less when exposed to Spotlight, I believe that giving viewers a trusted, curated guide to what's worth watching, for guidance-starved users like the 52-year-old lapsed subscriber and the Wanderers who default to Trending, will reduce churn and lift Month 1 retention by at least 10 points. Success will be measured by raising Wanderers' curated share of viewing from 18% to 31% (with ≥25% as the minimum to proceed). I will protect Power User sessions per week (no lower than 4.6×, from 4.8×) and will make a go/no-go decision after a 12-week controlled test.
