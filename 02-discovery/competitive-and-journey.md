@@ -7,11 +7,11 @@
 - **External tools, the outside platforms or tools the user is forced to use:** Physical media they already own. Priya puts on a DVD. It isn't a discovery tool. It's a way to avoid choosing at all.
 None documented for Marcus. He says he misses having a human curator but doesn't mention a replacement. Adding one here would be invented.
 - **The process, the 3 to 5 manual steps the user takes to get the job done:**
-1. Open the app with the intent to watch. Priya has been a heavy viewer for 14 years, so she's still coming back.
-2. Browse the home rows. Priya scrolls for about twenty minutes across a catalog of roughly 15,000 titles.
-3. Check the personalized row. Marcus finds that "Because you watched" offers three more action sequels after one action film (BUG-1091).
-4. Abandon the session. The app closes without anything being watched.
-5. Fall back to something familiar outside the app. Priya watches a DVD.
+  1. Open the app with the intent to watch. Priya has been a heavy viewer for 14 years, so she's still coming back.
+  2. Browse the home rows. Priya scrolls for about twenty minutes across a catalog of roughly 15,000 titles.
+  3. Check the personalized row. Marcus finds that "Because you watched" offers three more action sequels after one action film (BUG-1091).
+  4. Abandon the session. The app closes without anything being watched.
+  5. Fall back to something familiar outside the app. Priya watches a DVD.
 - **Core frustration, the exact moment the process feels most “broken”:**
 The process feels most broken at step 3 turning into step 4. The personalized row is the one place the platform claims to know this viewer, and it returns more of the same genre. For Marcus, that is the point where the app stops being worth the effort: "I'm not a genre, I'm a person." After that there's nothing left to try, so the session ends.
 - **The evidence, a specific quote or behavior from the research that proves this:**
