@@ -4,9 +4,11 @@
 - **Moment of misery / red flag #1 (e.g., “user gave up after 3 tries”):** “I can’t find anything worth watching.” Users spend significant time scrolling, feel overwhelmed by the huge library, and sometimes leave without watching anything.
 - **Moment of misery / red flag #2:** “The platform doesn’t understand my taste.” Recommendations are repetitive or overly simplistic.
 - **Moment of misery / red flag #3:** “I found something, but the experience broke.” Cross-device failures interrupt the core viewing journey
-- **Product Health & Insights Summary (Claude's output):
+-
+**Product Health & Insights Summary (Claude's output):**
 
-** Product Health & Insights Summary **
+Product Health & Insights Summary
+
 Executive Summary
 
 The product has a split health profile: a small number of high-severity stability and sync defects break specific sessions, while a broader, systemic failure in discovery erodes engagement across nearly every user segment. Technical defects in cross-device sync and Smart TV playback lose users at their moment of highest intent, and discovery and curation problems stop many users from forming an intent to watch at all. Engineering severity ratings track the stability issues closely, but the backlog underrepresents the discovery problem, which appears in 8 of 12 research notes and is directly linked to at least one cancellation.
