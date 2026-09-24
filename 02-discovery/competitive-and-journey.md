@@ -20,4 +20,5 @@ Priya (UXR-01): "I open the app, scroll for like twenty minutes, and close it wi
 Marcus (UXR-02): "It recommended three more action sequels because I watched one."
 
 BUG-1091 (High): Recommendations surface near-duplicate titles from the same franchise, and users flag them as repetitive.
-- **Your journey map, a shareable link, or the map file you committed (e.g. journey-map.html):** https://github.com/CptnKilt/pm-final-project/blob/main/02-discovery/spotlight-future-state-journey.md
+- **Your journey map, a shareable link, or the map file you committed (e.g. journey-map.html):**
+https://github.com/CptnKilt/pm-final-project/blob/main/02-discovery/spotlight-future-state-journey.md
