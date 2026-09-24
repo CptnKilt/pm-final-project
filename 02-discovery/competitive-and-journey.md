@@ -12,8 +12,10 @@ None documented for Marcus. He says he misses having a human curator but doesn't
 3. Check the personalized row. Marcus finds that "Because you watched" offers three more action sequels after one action film (BUG-1091).
 4. Abandon the session. The app closes without anything being watched.
 5. Fall back to something familiar outside the app. Priya watches a DVD.
-- **Core frustration, the exact moment the process feels most “broken”:** The process feels most broken at step 3 turning into step 4. The personalized row is the one place the platform claims to know this viewer, and it returns more of the same genre. For Marcus, that is the point where the app stops being worth the effort: "I'm not a genre, I'm a person." After that there's nothing left to try, so the session ends.
-- **The evidence, a specific quote or behavior from the research that proves this:** Priya (UXR-01): "I open the app, scroll for like twenty minutes, and close it without watching anything… I ended up going back to a DVD."
+- **Core frustration, the exact moment the process feels most “broken”:**
+The process feels most broken at step 3 turning into step 4. The personalized row is the one place the platform claims to know this viewer, and it returns more of the same genre. For Marcus, that is the point where the app stops being worth the effort: "I'm not a genre, I'm a person." After that there's nothing left to try, so the session ends.
+- **The evidence, a specific quote or behavior from the research that proves this:**
+Priya (UXR-01): "I open the app, scroll for like twenty minutes, and close it without watching anything… I ended up going back to a DVD."
 
 Marcus (UXR-02): "It recommended three more action sequels because I watched one."
 
