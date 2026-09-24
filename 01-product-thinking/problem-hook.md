@@ -3,22 +3,16 @@
 - **Scenario:** StreamLine Spotlight (B2C)
 
 ## Strategic crisis
-If StreamLine does nothing for 12 months, the damage won't show up as a cliff — it'll show up as a slow, compounding erosion that's dangerous precisely because it's invisible in the metrics leadership watches first.
-
-Subscriber counts and revenue will likely hold steady in the near term, because acquisition runs on a different engine (marketing, price promos, catalog size) than retention does. But underneath that, the highest-value segment — long-tenure, high-LTV, taste-driven viewers — will keep disengaging quietly before they ever cancel. By month 6–9, that disengagement becomes visible churn, and specialized competitors get to own the "place with taste" narrative uncontested. By month 12, StreamLine isn't just down some subscribers — it's ceded a market position that's expensive to buy back: pricing power softens (nothing differentiated to lose by leaving), CAC rises (less organic word-of-mouth from engaged users), and a competitor narrative calcifies that StreamLine now has to spend to dislodge instead of getting to establish first.
-
-The core risk: StreamLine remains the biggest library in the market while quietly losing its claim to being a trustworthy one — and that second kind of authority, once ceded, doesn't come back for free.
+StreamLine may still be the largest streaming library, but it risks losing its position as a discovery destination—shifting from a differentiated market leader to a high-volume utility while curated competitors capture the loyalty, engagement, and trust of its most valuable viewers.
 
 ## Moment of misery
-The user isn't struggling with a slow app or a bad UI. They're struggling with a platform that has stopped having a point of view.
-
-The user is currently forced to leave the app entirely before they can trust it. They open Letterboxd, Reddit threads, or critics' round-ups to figure out what's actually worth watching — then come back to StreamLine only to search for the title they already decided on and press play. StreamLine has been demoted from "place I discover things" to "place I stream things I discovered elsewhere." The 15,000-title library that should be an asset instead reads as undifferentiated noise, so the user does the curation work themselves, using someone else's taste, on someone else's platform — and StreamLine gets none of the credit or the browsing engagement that used to come with being the trusted starting point.
+Right now, a StreamLine viewer who wants a good film has to leave StreamLine to figure out what to watch, then come back only to press play. The app handles playback, but the discovery happens somewhere else.
 
 ## Problem hook
-StreamLine is losing its most valuable users — not gradually demoting them to passive players, but losing them from the platform altogether — because it stopped telling them what's worth watching, and by the time users start solving that problem elsewhere, they're not reliably coming back at all.
+StreamLine is losing its most valuable viewers not because it lacks content, but because they have to leave the platform to discover what’s worth watching—and every month we wait gives curated competitors another chance to become the trusted guide StreamLine used to be.
 
 ## Value proposition
-For high-engagement, taste-driven viewers who used to treat StreamLine as a discovery authority and now only use it to press play on titles they found elsewhere, we will build StreamLine Spotlight: a dedicated, human-curated space inside the app — bounded collections, named curators, real editorial point of view — that restores the feeling of a trusted guide inside a platform built for scale, without shrinking the mass-market library that funds it because the window to own the "trusted taste" position is closing. Every month StreamLine waits, specialized competitors get further ahead in owning that narrative with exactly the segment StreamLine can least afford to lose — and repositioning against an entrenched competitor always costs more than establishing the position first.
+For high-engagement, taste-driven viewers who once relied on StreamLine to discover what to watch, we will deliver StreamLine Spotlight, a dedicated, human-curated experience with bounded collections, named curators, and a genuine editorial point of view—restoring StreamLine as a trusted guide, not just a massive library because churn in this group compounds, specialized services are winning them over now, and winning them back after they've settled elsewhere will cost far more than keeping them.
 
 ## Cold-read self-review
-In reading over all the information above, I feel the Value Proposition is the strongest. I feel I was able to state who this is for, what we will do, and why it needs to be done. As for the weekest, I think it is the Strategic Crisis. I make several assumptions about what is happening without having the data to back it up. There are several key data points that are missing such as: Our most valuable users are disengaging, users are leaving StreamLine to discover content elsewhere, and Human curation will solve the issue.
+_(not filled in)_
