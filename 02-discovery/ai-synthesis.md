@@ -4,8 +4,7 @@
 - **Moment of misery / red flag #1 (e.g., “user gave up after 3 tries”):** “I can’t find anything worth watching.” Users spend significant time scrolling, feel overwhelmed by the huge library, and sometimes leave without watching anything.
 - **Moment of misery / red flag #2:** “The platform doesn’t understand my taste.” Recommendations are repetitive or overly simplistic.
 - **Moment of misery / red flag #3:** “I found something, but the experience broke.” Cross-device failures interrupt the core viewing journey
--
-**Product Health & Insights Summary (Claude's output):**
+- **Product Health & Insights Summary (Claude's output):**
 
 Product Health & Insights Summary
 
