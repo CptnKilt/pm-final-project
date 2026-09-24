@@ -9,6 +9,7 @@
 
 ```
  TODAY (workaround)
+
  Open app ──▶ 20-min scroll ──▶ "Because you watched" ──▶ Abandon ──▶ DVD
      │              │                    │                   │
      ▼              ▼                    ▼                   ▼
