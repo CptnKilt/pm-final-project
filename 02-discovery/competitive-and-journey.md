@@ -16,7 +16,7 @@
 None documented for Marcus. He says he misses having a human curator but doesn't mention a replacement. Adding one here would be invented.
 - **The process, the 3 to 5 manual steps the user takes to get the job done:**
 
-  1. Open the app with the intent to watch. Priya has been a heavy viewer for 14 years, so she's still coming back.
+1. Open the app with the intent to watch. Priya has been a heavy viewer for 14 years, so she's still coming back.
 2. Browse the home rows. Priya scrolls for about twenty minutes across a catalog of roughly 15,000 titles.
 3. Check the personalized row. Marcus finds that "Because you watched" offers three more action sequels after one action film (BUG-1091).
 4. Abandon the session. The app closes without anything being watched.
