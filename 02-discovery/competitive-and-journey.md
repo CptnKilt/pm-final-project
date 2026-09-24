@@ -22,8 +22,8 @@ FUTURE STATE (Spotlight)
  Spotlight       by a named        stated reason    already waiting
                  curator
 
- Feels:          Feels:            Feels:           Feels:
- oriented        curious           confident        known again
+ Feels:
+ oriented, curious, confident, known again
 ```
 
 ---
