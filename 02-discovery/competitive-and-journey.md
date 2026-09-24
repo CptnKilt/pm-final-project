@@ -13,7 +13,8 @@
  Open app ──▶ 20-min scroll ──▶ "Because you watched" ──▶ Abandon ──▶ DVD
      │              │                    │                   │
      ▼              ▼                    ▼                   ▼
- FUTURE STATE (Spotlight)
+
+FUTURE STATE (Spotlight)
 
  ① ARRIVE ─────▶ ② BROWSE ─────▶ ③ CHOOSE ─────▶ ④ WATCH & RETURN
  Lands on        Explores one      Picks on a       Finishes; next
