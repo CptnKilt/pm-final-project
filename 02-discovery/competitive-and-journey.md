@@ -2,7 +2,8 @@
 
 ## Responses
 - **Role, who are you solving for? (the specific user segment or profile):**
--   The Stranded Devotee: A heavy, long-tenured viewer who knows film well and still opens the app often, but increasingly leaves without watching anything.
+
+  The Stranded Devotee: A heavy, long-tenured viewer who knows film well and still opens the app often, but increasingly leaves without watching anything.
 - **Goal, what is this user ultimately trying to achieve?:** Find something new that fits their taste as a person, not the "more of the same genre" the algorithm offers.
 - **Friction, the main barrier (moment of misery) stopping them from succeeding:** Priya scrolls for twenty minutes through 15,000 titles, closes the app, and puts on a DVD. Marcus watches one action film and is shown three more action sequels. This is the hook's warning in progress: loyal viewers who haven't left yet but have stopped discovering on the platform.
 - **External tools, the outside platforms or tools the user is forced to use:** Physical media they already own. Priya puts on a DVD. It isn't a discovery tool. It's a way to avoid choosing at all.
