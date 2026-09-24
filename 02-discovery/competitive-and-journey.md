@@ -1,63 +1,20 @@
-# StreamLine Spotlight: Future State Journey
+# Competitive Analysis & Journey Map (Module 2)
 
-**Persona:** The Stranded Devotee
-**Initiative:** StreamLine Spotlight, a human-curated experience with bounded collections and named curators
+## Responses
+- **Role, who are you solving for? (the specific user segment or profile):** The Stranded Devotee: A heavy, long-tenured viewer who knows film well and still opens the app often, but increasingly leaves without watching anything.
+- **Goal, what is this user ultimately trying to achieve?:** Find something new that fits their taste as a person, not the "more of the same genre" the algorithm offers.
+- **Friction, the main barrier (moment of misery) stopping them from succeeding:** Priya scrolls for twenty minutes through 15,000 titles, closes the app, and puts on a DVD. Marcus watches one action film and is shown three more action sequels. This is the hook's warning in progress: loyal viewers who haven't left yet but have stopped discovering on the platform.
+- **External tools, the outside platforms or tools the user is forced to use:** Physical media they already own. Priya puts on a DVD. It isn't a discovery tool. It's a way to avoid choosing at all.
+None documented for Marcus. He says he misses having a human curator but doesn't mention a replacement. Adding one here would be invented.
+- **The process, the 3 to 5 manual steps the user takes to get the job done:** 1. Open the app with the intent to watch. Priya has been a heavy viewer for 14 years, so she's still coming back.
+2. Browse the home rows. Priya scrolls for about twenty minutes across a catalog of roughly 15,000 titles.
+3. Check the personalized row. Marcus finds that "Because you watched" offers three more action sequels after one action film (BUG-1091).
+4. Abandon the session. The app closes without anything being watched.
+5. Fall back to something familiar outside the app. Priya watches a DVD.
+- **Core frustration, the exact moment the process feels most “broken”:** The process feels most broken at step 3 turning into step 4. The personalized row is the one place the platform claims to know this viewer, and it returns more of the same genre. For Marcus, that is the point where the app stops being worth the effort: "I'm not a genre, I'm a person." After that there's nothing left to try, so the session ends.
+- **The evidence, a specific quote or behavior from the research that proves this:** Priya (UXR-01): "I open the app, scroll for like twenty minutes, and close it without watching anything… I ended up going back to a DVD."
 
----
+Marcus (UXR-02): "It recommended three more action sequels because I watched one."
 
-## Visual Timeline
-
-```
- TODAY (workaround)
-
- Open app ──▶ 20-min scroll ──▶ "Because you watched" ──▶ Abandon ──▶ DVD
-     │              │                    │                   │
-     ▼              ▼                    ▼                   ▼
-
-FUTURE STATE (Spotlight)
-
- ① ARRIVE ─────▶ ② BROWSE ─────▶ ③ CHOOSE ─────▶ ④ WATCH & RETURN
- Lands on        Explores one      Picks on a       Finishes; next
- tonight's       short collection  curator's        collection is
- Spotlight       by a named        stated reason    already waiting
-                 curator
-
- Feels:
- oriented, curious, confident, known again
-```
-
----
-
-## The 4 Stages
-
-### 1. Arrive: "Tonight on Spotlight"
-- **User Action:** Opens app, lands on one curated collection → skips the 15,000-title wall.
-- **Internal State:** Sees a short, dated edit → feels oriented instead of overwhelmed.
-- **Pain Point Addressed:** Replaces the twenty-minute scroll → intent survives the first screen (UXR-01).
-
-### 2. Browse: A Bounded Collection
-- **User Action:** Explores a short collection by a named curator → browsing has a clear end.
-- **Internal State:** Reads a curator's point of view → feels curious, not sorted into a genre.
-- **Pain Point Addressed:** Swaps genre rows for editorial themes → treated as a person (UXR-02).
-
-### 3. Choose: A Pick with a Reason
-- **User Action:** Reads the curator's note on why a title matters → chooses without second-guessing.
-- **Internal State:** Trusts a named human's judgment → confident the evening is well spent.
-- **Pain Point Addressed:** Replaces franchise duplicates → surfaces the hidden gem Marcus misses (BUG-1091, UXR-02).
-
-### 4. Watch & Return: An Ongoing Relationship
-- **User Action:** Watches, then follows the curator → returns next time with a plan.
-- **Internal State:** Found something new on StreamLine → feels the platform knows them again.
-- **Pain Point Addressed:** Removes the DVD fallback → discovery happens on-platform, not off it (UXR-01).
-
----
-
-## 3 Competitive Advantages over the Manual Workaround
-
-1. **Novelty with trust.** The DVD offers trust without novelty, and the algorithm offers novelty without trust. Spotlight is built to deliver both.
-2. **Browsing that ends in a choice.** A bounded, curated set replaces an open-ended scroll that currently ends in abandonment.
-3. **Discovery stays on StreamLine.** Each session is designed to end in viewing on the platform. That addresses the erosion of engagement before it turns into a cancellation like Tom's (UXR-04).
-
----
-
-*Note: This journey describes design intent. None of the outcomes have been validated with users yet. Stage 4 depends on saved items and follows syncing across devices, which is currently broken (BUG-1058, Critical).*
+BUG-1091 (High): Recommendations surface near-duplicate titles from the same franchise, and users flag them as repetitive.
+- **Your journey map, a shareable link, or the map file you committed (e.g. journey-map.html):** https://github.com/CptnKilt/pm-final-project/blob/main/02-discovery/competitive-and-journey.md
