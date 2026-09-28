@@ -19,12 +19,13 @@
 | A6 Spotlight Digest Email | 2 | 2 | Fill-In | Later | Devotees already open the app often. The leak happens inside the session, not in getting them there, so more opens don't fix the metric. |
 | A7 Curator Profiles | 3 | 4 | Time Sinker | Cut | Devotees do trust expert taste, but following, profiles, and ongoing editorial work are a platform bet that won't show results in an 8-week pilot. A1 already delivers the curation value. |
 | A8 Watch Party (Spotlight) | 1 | 5 | Time Sinker | Cut | Priya's problem is solo discovery, not social viewing. This is Sales-driven and months of sync, chat, and moderation work. |
-| A9 Advanced Filter Engine | 5 | 2 | Quick Win | Later | Enables the user to refine their searching to help  them find what they are looking for instead of scrolling the entire catalog or serching for a specific movie title. |
+| A9 Advanced Filter Engine | 5 | 2 | Quick Win | Now | Enables the user to refine their searching to help  them find what they are looking for instead of scrolling the entire catalog or serching for a specific movie title. |
 | A10 Offline Download (Spotlight) | 1 | 5 | Time Sinker | Cut | It does nothing about the choice problem, offline viewing may not register as a measurable session, and per-title download rights and DRM make it months of work. |
 
 ## Roadmap
 ### NOW, 3-week sprint
 - **A1 Spotlight Curated Rail**, It hits Priya's 20-minute scroll head-on by turning 15,000 titles into a short, trusted shortlist. It uses existing homepage rail infrastructure and is the thing the exposed/non-exposed split measures.
+- **A9 Advanced Filter Engine**, Enables the user to refine their searching to help  them find what they are looking for instead of scrolling the entire catalog or serching for a specific movie title.
 
 ### NEXT, following 1-2 sprints
 - **A2 'Why You'll Love This' Label**, A stated reason is exactly what converts a Devotee from browse to play, and a play made for a reason is more likely to reach 30 minutes. As specced, though, the reasons are AI-generated and appear on hover, and there's no hover on TV, where heavy viewers likely watch.
@@ -33,7 +34,6 @@
 ### LATER, backlog
 - **A3 Hidden Gem Badge**, It speaks to a film-literate viewer tired of the obvious and counters Marcus's sameness problem. But a badge adds a signal without cutting down the choice set, so it won't move the metric alone.
 - **A6 Spotlight Digest Email**, Devotees already open the app often. The leak happens inside the session, not in getting them there, so more opens don't fix the metric.
-- **A9 Advanced Filter Engine**, Enables the user to refine their searching to help  them find what they are looking for instead of scrolling the entire catalog or serching for a specific movie title.
 
 ### ✂ Cut List
 - **A4 Mood-Based Entry Point**, A login gate adds friction for frequent visitors, putting the 4.8 sessions/week guardrail at risk, and it suits Wanderers more than Devotees who know film. It also needs a mood taxonomy for the whole catalog.
