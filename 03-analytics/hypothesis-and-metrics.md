@@ -1,73 +1,127 @@
 # Hypothesis & Success Metrics (Module 3)
 
 ## Pre-work · Hypothesis check
-- **Role , who you are solving for (from M2):** A 52-year-old long-time subscriber who cancelled last year and now watches films picked by a competitor.
-- **Goal , what this user is ultimately trying to achieve:** Good evenings without the work of searching for them. Inferred from "quality of my evenings went down" and from him watching both of the two weekly picks
-- **Friction / moment of misery , the specific pain blocking their goal:** The catalog turned into a "warehouse." As the volume went up, nothing helped him find what was worth his time, so he switched to a service that sends him two hand-picked films a week.
-- **Current workaround , the external tool or manual process they rely on (M2):** Using another streaming service
-- **Problem Hook , your one-sentence framing of the business crisis (M1):** StreamLine is losing its most valuable users — not gradually demoting them to passive players, but losing them from the platform altogether — because it stopped telling them what's worth watching, and by the time users start solving that problem elsewhere, they're not reliably coming back at all.
-- **Value Proposition , the outcome your initiative promised to deliver (M1):** For high-engagement, taste-driven viewers who used to treat StreamLine as a discovery authority and now only use it to press play on titles they found elsewhere, we will build StreamLine Spotlight: a dedicated, human-curated space inside the app — bounded collections, named curators, real editorial point of view — that restores the feeling of a trusted guide inside a platform built for scale, without shrinking the mass-market library that funds it because the window to own the "trusted taste" position is closing. Every month StreamLine waits, specialized competitors get further ahead in owning that narrative with exactly the segment StreamLine can least afford to lose — and repositioning against an entrenched competitor always costs more than establishing the position first.
+- **Role , who you are solving for (from M2):** The Stranded Devotee: A heavy, long-tenured viewer who knows film well and still opens the app often, but increasingly leaves without watching anything.
+- **Goal , what this user is ultimately trying to achieve:** Find something new that fits their taste as a person, not the "more of the same genre" the algorithm offers.
+- **Friction / moment of misery , the specific pain blocking their goal:** Priya scrolls for twenty minutes through 15,000 titles, closes the app, and puts on a DVD. Marcus watches one action film and is shown three more action sequels. This is the hook's warning in progress: loyal viewers who haven't left yet but have stopped discovering on the platform.
+- **Current workaround , the external tool or manual process they rely on (M2):** Physical media they already own. Priya puts on a DVD. It isn't a discovery tool. It's a way to avoid choosing at all. None documented for Marcus. He says he misses having a human curator but doesn't mention a replacement. Adding one here would be invented.
+- **Problem Hook , your one-sentence framing of the business crisis (M1):** StreamLine is losing its most valuable viewers not because it lacks content, but because they have to leave the platform to discover what’s worth watching—and every month we wait gives curated competitors another chance to become the trusted guide StreamLine used to be.
+- **Value Proposition , the outcome your initiative promised to deliver (M1):** For high-engagement, taste-driven viewers who once relied on StreamLine to discover what to watch, we will deliver StreamLine Spotlight, a dedicated, human-curated experience with bounded collections, named curators, and a genuine editorial point of view—restoring StreamLine as a trusted guide, not just a massive library because churn in this group compounds, specialized services are winning them over now, and winning them back after they've settled elsewhere will cost far more than keeping them.
 
 ## Read your data snapshots
-- **Does the funnel data confirm your M2 friction point, or does it tell a different story? Note where the numbers align with the qualitative pain you found and where they diverge.:** The funnel partially confirms my M2 friction. The drop from browsing to playing, where roughly 60% of browsers never press play, and the 7-point fall in searched-then-played both fit a discovery problem: users can't find something worth their time. The 21% DAU decline is consistent with my hook that high-value users are leaving. But the data diverges in two ways. First, the steepest drop is after play starts: 62% of starts never reach 30 minutes. That points to a problem with the quality of picks, not only with finding them. Second, the 23% fall in session length shows remaining users are also disengaging, which complicates my claim that users are leaving rather than becoming passive. There is also a scope limit. This data is mobile-only and covers only active users, while my persona is a churned, likely TV-based viewer. I need churn and cohort data by segment and device before treating this as confirmation
-- **Do the retention patterns align with the workaround your M2 persona used to find content? Note what the Mo. 0→1 drop suggests about the onboarding experience your persona described as frustrating.:** Retention aligns with my persona's workaround. He left for a service that pushes two curated films a week, and the Spotlight cohorts, which get a similar bounded, curated experience, retain better at every point measured. The gap over the Full Library grows from 11 points at Month 1 to 18 at Month 3, which suggests curation builds a lasting habit rather than a one-time bump. The Month 0→1 drop is still the largest leak for every cohort (21–26 points even with Spotlight), which suggests new users meet the "warehouse" problem before they have enough history for recommendations to help. That points toward making curated picks the centre of onboarding. Two limits: my persona was a lapsed long-time subscriber, not a new user, so these cohorts don't show whether Spotlight would win back users like him. And the Spotlight cohorts are winter sign-ups, so seasonality could explain part of the lift.
-- **Does the LTV gap and the content mix (61% trending for Wanderers) confirm the moment of misery your persona described? Note which segment your persona is in and whether the data confirms their pain.:** The content mix supports the "warehouse" moment of misery. Wanderers get 61% of their viewing from trending, the default when nothing tells them what is worth watching, and they show the largest churn improvement when exposed to Spotlight (22 points). My persona, though, fits the Power User profile: taste-driven, high-engagement and curation-first (58% curated). This segment is described as low-churn, yet my persona churned. That suggests either survivorship bias (lapsed Power Users aren't counted) or that he drifted into Wanderer-like behavior before cancelling. So the data confirms the pain, but mainly for Wanderers, not for the segment my persona represents. A rough estimate (share × churn reduction × LTV) puts Wanderers ahead of Casual Browsers in revenue protected, though the churn baseline and exposure method aren't stated. This challenges my hook's focus on "most valuable" users: Spotlight's strongest case may be as a guide for the undecided mass market, which is larger in total impact.
-- **Does the low adoption confirm your persona is burdened by tools they don’t use? Note whether the low scheduling adoption (42%) for coordinators matches your M2 moment of misery.:** _(not filled in)_
-- **Does the workflow data match the manual process or hack you documented in M2? Note whether the specific drop-offs or time gaps explain why your persona avoids the digital tool.:** _(not filled in)_
-- **Look at the CSAT heatmap. Which specific cell most directly maps to your persona’s friction? Note how the NPS trend justifies the urgency of your M1 Problem Hook.:** _(not filled in)_
+- **Does the funnel data confirm your M2 friction point, or does it tell a different story? Note where the numbers align with the qualitative pain you found and where they diverge.:** Where the numbers align
+
+"Opens the app often, leaves without watching" appears in the funnel shape. 71% of visitors browse titles, but only 29% start playing. That means about 42 of every 100 visitors look around and leave without pressing play. This is Priya's twenty-minute scroll in aggregate.
+
+Engagement depth is falling, not reach. Average session length dropped from 31 to 24 minutes, and 30+ minute sessions dropped from 19% to 11%. This matches the Devotee pattern: people keep showing up but get less out of each visit.
+
+Search is failing more often. "Content searched then played" fell from 41% to 34%. Even viewers who arrive with intent, which fits someone who "knows film well," are converting less. That supports the view that the platform is failing at discovery, not at attracting visitors.
+
+Where the numbers diverge or complicate the story
+
+1. Viewers are already leaving. Mobile DAU is down 21%, about 400,000 fewer daily users. The funnel percentages are holding, but the base is shrinking. The Hook describes loyal viewers "who haven't left yet." The data suggests many already have, so the urgency is higher than M1 claimed.
+
+2. A second leak appears after play starts. 29% start playing, but only 11% reach 30 minutes. So 18 of every 100 visitors press play and then abandon. The M2 research focused on choosing, not on abandoning after choosing. Marcus's experience could explain some of it: if he's served a third action sequel and quits ten minutes in, the problem is bad recommendations, not just too many options. That leak is worth naming separately.
+
+3. Declining search success could point to a catalog problem. The Hook says viewers leave "not because it lacks content." But if searches for specific titles fail more often, some of that decline may reflect titles that aren't available. The data can't yet distinguish "couldn't find it" from "it isn't there." This is the most direct potential challenge to the Hook.
+
+4. The data may not describe the Devotee. This snapshot covers the whole mobile user base, not heavy, long-tenured viewers. Priya's alternative is a DVD, which suggests TV viewing, not mobile. The pattern is consistent with the persona, but it doesn't prove the persona is the one driving it.
+- **Do the retention patterns align with the workaround your M2 persona used to find content? Note what the Mo. 0→1 drop suggests about the onboarding experience your persona described as frustrating.:** Where it aligns with the workaround
+
+The workaround is avoiding choice, and Spotlight reduces choice. Priya's DVD isn't a way to discover films. It's a way out of 15,000 options. Spotlight offers bounded collections, which is the same relief delivered inside the platform. Spotlight cohorts retain better at every month observed:
+
+	Mo. 1	Mo. 2	Mo. 3
+Full Library (Sep–Nov)	63–68%	47–51%	34–39%
+Spotlight (Dec–Feb)	74–79%	61–64%	52%
+
+The gap grows over time. It's about 11–16 points at Month 1 and 13–18 points at Month 3. Spotlight cohorts also lose people more slowly after the first month. Dec loses 13 points from Mo. 1 to Mo. 2, compared with 17 for Sep. This suggests curation helps sustain a habit, not just make a good first impression. That fits the Devotee's need for a repeated reason to open the app.
+
+The two groups are moving in opposite directions. Full Library Month 1 retention worsens with each cohort (68 → 66 → 63). Spotlight Month 1 retention improves with each cohort (74 → 77 → 79). Before Spotlight launched, the problem was getting worse.
+
+What the Mo. 0→1 drop does suggest
+
+The first month is still the biggest drop for every cohort: 32–37 points for Full Library, 21–26 for Spotlight. New subscribers decide early whether this app can find them something worth watching. Spotlight shrinks that drop by about a third but doesn't close it.
+
+This probably shares a root cause with the Devotee's friction: too much catalog and too little guidance. A new user faces it before they have any history; a Devotee faces it after the algorithm has boxed them in. The same fix may help both groups, but new subscribers are a second audience my M1/M2 work didn't define. I need to decide whether that broadens Spotlight's scope or stays out of it.
+- **Does the LTV gap and the content mix (61% trending for Wanderers) confirm the moment of misery your persona described? Note which segment your persona is in and whether the data confirms their pain.:** What the data confirms
+
+Trending-heavy viewing reflects the underlying failure. Wanderers get 61% of their viewing from Trending and only 18% from Curated. Trending is popularity-driven, not taste-driven. It's the group version of Marcus's experience: recommendations that aren't about him. When nothing guides people toward their own taste, they fall back on what's popular or they leave. That matches the root cause M2 identified.
+
+Curation works best where there's the least of it. The churn improvement is largest for the segment that uses curated content least (Wanderers, 22 points) and smaller for the segment in between (Casuals, 14 points). That pattern supports the core idea of Spotlight.
 
 ## Step 3 · Craft your hypothesis
-- **Qualitative evidence (from M2) , quote the specific friction / moment of misery for your persona:** UXR-04, long-time subscriber (52), cancelled: He described the catalog as having "became a warehouse" and said the "quality of my evenings went down." As the library grew, nothing helped him find what was worth his time, so he moved to a competitor that sends two hand-picked films a week. He watches both.
-- **Quantitative evidence (from M3) , name the metric or data point that confirms the pain; cite the number:** Primary: Wanderers (41% of the base) get 61% of their viewing from Trending and only 18% from Curated. When exposed to Spotlight, their churn drops by 22 points compared with non-exposed Wanderers, the largest improvement of any segment (Snapshot 3). With no guide to what's worth watching, users default to Trending and drift away. Once they get a curated guide, they stay.
+- **Qualitative evidence (from M2) , quote the specific friction / moment of misery for your persona:** Priya scrolls for twenty minutes through 15,000 titles, closes the app, and puts on a DVD. Marcus watches one action film and is shown three more action sequels. This is the hook's warning in progress: loyal viewers who haven't left yet but have stopped discovering on the platform.
+- **Quantitative evidence (from M3) , name the metric or data point that confirms the pain; cite the number:** Primary data point (confirms Priya's pain):
+71% of homepage visitors browse titles, but only 29% start playing. That means 42 of every 100 visitors look through the catalog and leave without watching anything, which is Priya's twenty-minute scroll at scale. (Snapshot 1, conversion funnel)
 
-Supporting: Spotlight cohorts retain better, and the gap widens over time: +11 points at Month 1 and +18 points at Month 3 (Dec 52% vs. Nov 34%) (Snapshot 2). Before Spotlight, discovery was also weakening: content searched then played fell from 41% to 34%, and 30+ minute sessions fell from 19% to 11% (Snapshot 1).
-- **Persona , role, goal, and the friction you confirmed in the reconciliation steps:** Persona: A 52-year-old long-time subscriber who cancelled and now watches the two films a week hand-picked by a competitor (UXR-04).
+Supporting data points:
 
-Role: A taste-driven viewer who wants a trusted guide to what's worth watching. His profile resembles a Power User (58% curated viewing). The data shows the same need most strongly among Wanderers, 41% of the base, who have no guide and default to Trending.
+The share of sessions reaching 30+ minutes fell from 19% to 11% over six months, a drop of 8 points. (Snapshot 1)
+"Content searched then played" fell from 41% to 34%, a drop of 7 points. Even viewers who arrive knowing what they want are finding and playing it less often. (Snapshot 1)
 
-Goal: Good evenings without the work of searching for them.
+Data point for Marcus's pain:
+Wanderers get 61% of their viewing from Trending and only 18% from Curated. Without guidance toward their own taste, users fall back on popularity-driven picks, the aggregate form of "more of the same." (Snapshot 3)
+- **Persona , role, goal, and the friction you confirmed in the reconciliation steps:** Role: The Stranded Devotee: A heavy, long-tenured viewer who knows film well and still opens the app often, but increasingly leaves without watching anything.
 
-Confirmed friction: As the catalog grew, it "became a warehouse" with nothing pointing to what's worth watching. Users fall back on Trending, engage less, and leave. The data confirms this:
+Goal: Find something new that fits their taste as a person, not the "more of the same genre" the algorithm offers.
 
-Wanderers get 61% of their viewing from Trending, and their churn drops 22 points with Spotlight.
-Spotlight cohorts retain 18 points better by Month 3.
-Searched-then-played fell from 41% to 34%.
+Friction: Priya scrolls for twenty minutes through 15,000 titles, closes the app, and puts on a DVD. Marcus watches one action film and is shown three more action sequels. This is the hook's warning in progress: loyal viewers who haven't left yet but have stopped discovering on the platform.
+- **Problem you are solving , one sentence describing the specific friction this initiative removes:** Viewers open StreamLine and browse a 15,000-title catalog, but leave without committing to anything they want to watch, because the platform offers volume and popularity rather than guidance matched to their personal taste.
+- **Strategic outcome , what behaviour change do you expect, and how does it map to retention / revenue / churn?:** Expected behavior change:
+Viewers move from browsing without committing to choosing from bounded, curated collections and watching past the first few minutes. More visits end in a play, more plays last beyond 30 minutes, and more of each viewer's viewing comes from curated content rather than trending.
 
-What changed from M2: The friction holds, but the segment shifted. The strongest evidence comes from undecided, mass-market users, not only taste-driven ones like the persona. Lapsed Power Users aren't visible in the M3 data.
-- **Problem you are solving , one sentence describing the specific friction this initiative removes:** Viewers can't tell what's worth their time in an ever-growing catalog, so they fall back on Trending, drift away, and leave.
-- **Strategic outcome , what behaviour change do you expect, and how does it map to retention / revenue / churn?:** Behavior change: Viewers stop defaulting to Trending and start their evenings from a small set of curated picks. Wanderers shift from 18% toward Casual-level curated viewing (~31%) and come back more often than once a week, building a weekly habit around the picks, as the persona did with his two-a-week service.
+How it maps to business outcomes:
+Outcome	Mechanism	Evidence so far
+Engagement (leading indicator)	Bounded choice turns browsing into playing, and taste-matched picks keep people watching	Target: close the browse→play gap (71% → 29%) and recover 30+ min sessions toward 19% (currently 11%) (Snapshot 1)
+Retention	Viewers who regularly find something worth watching keep coming back	Spotlight cohorts retain 12–15 points better at Month 1 and about 13–18 points better at Month 3 (Snapshot 2)
+Churn	Curation replaces the "leave to decide" workaround, whether that's a DVD or another service	Spotlight exposure cuts churn by 22 points for Wanderers and 14 points for Casuals (Snapshot 3)
+Revenue	Lower churn keeps monthly LTV on the books longer. The largest gain is Wanderers, because of their size (41% of the base) and churn improvement, despite the lowest LTV ($8.40)
+- **Primary success metric (initiative signal) , the leading indicator that tells you the gap is closing:** Primary success metric: the share of sessions that reach a 30+ minute watch
 
-How it maps:
+Current: 11%
+Six months ago: 19%
+Target direction: back toward the 19% baseline, measured for Spotlight-exposed versus non-exposed users (Snapshot 1)
 
-Retention: Spotlight cohorts reach 52% by Month 3, compared with 34% for Full Library (+18 points). The target is to hold or widen that gap and cut the Month 0→1 drop by putting curated picks into onboarding.
-Churn: −22 points for Wanderers and −14 points for Casual Browsers when exposed to Spotlight. These two segments are 78% of the base.
-Revenue: A rough estimate (segment share × churn reduction × monthly revenue per user) gives about $135 protected per 100 users per month, roughly 12% of monthly revenue. About 56% comes from Wanderers and 44% from Casual Browsers.
+Why this is the right leading indicator:
 
-Leading indicators: Wanderers' curated share of viewing, sessions per week, and Month 1 retention for new cohorts.
-- **Primary success metric (initiative signal) , the leading indicator that tells you the gap is closing:** Primary success metric: Wanderers' curated share of viewing, meaning the % of Wanderer play-starts that come from Spotlight or curated collections instead of Trending.
+It covers both leaks in one number. A session only counts if the viewer chose something (browse → play) and stayed with it (play → 30+ min). That covers Priya's scroll-and-leave and the drop-off after pressing play.
+It's hard to inflate. Browse-to-play alone could rise from autoplay or accidental taps. A 30+ minute watch means the pick actually fit the viewer's taste.
+It moves before churn does. Session depth changes week to week. Retention and churn take months to show up in cohort data, so this metric shows whether the gap is closing before the lagging results arrive.
 
-Baseline: 18% (Snapshot 3)
-Target: 31% within two quarters, which is the Casual Browser level
-Why it's leading: It measures the friction directly. Users who start from a trusted pick instead of defaulting to Trending are the ones Snapshot 3 shows churning 22 points less. It moves weeks before churn or retention numbers can.
-- **Guardrail metric (product signal) , the metric that must NOT drop; it protects your existing base:** Guardrail metric: Power User sessions per week
+How to read it:
 
-Baseline: 4.8× (Snapshot 3)
-Threshold: Must not fall below about 4.6× (a drop of more than 5%)
-Why this one: Power Users are 22% of the base but about 29% of revenue, and they have the highest LTV ($14.20). They already churn little and rely on curation (58%). The risk is that reshaping the app around Spotlight for Wanderers disrupts how your best users already find and watch content. If their frequency slips, Spotlight is winning the mass market at the expense of your most valuable segment.
-- **Decision window , how much time or data before you scale, pivot, or kill? minimum threshold to proceed?:** Decision window: 12 weeks. Run a randomized test with Wanderers split into Spotlight-exposed and control groups. That fixes the self-selection and seasonality problems in the Snapshot 2–3 data, and 12 weeks gives two new-user cohorts time to show Month 1 retention.
+Segment it by tenure and user segment, not only in aggregate. That's how you answer the open question about whether Devotees benefit or only Wanderers and new users do.
+Pair it with two supporting metrics: browse→play conversion (currently 29%), to locate which leak is closing, and the share of viewing that comes from curated content, to confirm that Spotlight is driving the change.
+- **Guardrail metric (product signal) , the metric that must NOT drop; it protects your existing base:** Guardrail metric: weekly sessions per Power User
 
-Minimum threshold to proceed (all three must hold):
+Current: 4.8 sessions a week (Snapshot 3)
+Rule: It must not fall below this baseline for Power Users exposed to Spotlight, compared with those not exposed.
 
-Wanderers' curated share of viewing is ≥25% (baseline 18%, final target 31%)
-Month 1 retention for exposed cohorts is ≥10 points above control
-Power User sessions per week stay ≥4.6×
+Why this is the right guardrail:
 
-Scale: All three are met. Roll Spotlight out to all Wanderers and Casual Browsers, and make curated picks part of onboarding.
+It protects the most valuable, most stable segment. Power Users are 22% of the base, have the highest monthly LTV ($14.20), and already have low churn. The data says they're not the opportunity, so the main risk is harming them by accident.
+It guards against Spotlight's biggest risk. If curated collections take over homepage space from the algorithmic rows, personal history, and search paths Power Users already rely on, they may visit less often. Their current 58% curated / 22% trending mix works for them, and Spotlight shouldn't disrupt it.
+It gives early warning. A drop in visit frequency shows up weeks before any change in churn, so problems can be caught while they're still easy to reverse.
+- **Decision window , how much time or data before you scale, pivot, or kill? minimum threshold to proceed?:** Decision window: 90 days, run as a randomized test with a holdout group that doesn't see Spotlight
 
-Pivot:
+A concurrent holdout is necessary because the current Spotlight lift comes from December–February cohorts and opt-in exposure. Only a side-by-side comparison run at the same time separates a real effect from seasonality and self-selection. With 1.49M mobile daily active users, a 10–20% holdout is large enough to detect a meaningful difference.
 
-If curated share rises but retention lift is under 5 points, people are clicking but not staying. Rework curation quality and depth.
-If the Power User guardrail is breached, change where Spotlight sits in the app rather than dropping it.
+Checkpoints
 
-Kill: At week 12, curated share has moved less than 3 points (still ≤21%) and there's no retention lift. Wanderers aren't taking the guide.
-- **Draft your full hypothesis sentence , one to three sentences; quote the metric, name the persona, name the outcome:** Based on UXR-04's description of the catalog as a "warehouse" and the Snapshot 3 finding that Wanderers churn 22 points less when exposed to Spotlight, I believe that giving viewers a trusted, curated guide to what's worth watching, for guidance-starved users like the 52-year-old lapsed subscriber and the Wanderers who default to Trending, will reduce churn and lift Month 1 retention by at least 10 points. Success will be measured by raising Wanderers' curated share of viewing from 18% to 31% (with ≥25% as the minimum to proceed). I will protect Power User sessions per week (no lower than 4.6×, from 4.8×) and will make a go/no-go decision after a 12-week controlled test.
+Checkpoint	What we can read	Decision
+Day 30	Leading metrics: 30+ min session share, browse→play conversion, both guardrails	Stop early only if a guardrail is breached
+Day 90	Month 1 retention for two monthly cohorts, Month 2 for the first; the primary metric sustained; results broken out by tenure and segment	Scale, pivot, or kill
+
+Minimum thresholds to proceed (these are proposed targets, not figures from the data)
+
+Primary metric: 30+ min session share at least +3 points above the holdout (baseline 11%). That recovers more than a third of the 8-point decline.
+Retention: Month 1 retention at least +6 points above the holdout. That's about half the observed 12–15 point lift, allowing for how much of it may have been seasonal.
+Guardrails hold: Power User sessions stay at or above 4.6 a week (within 5% of 4.8), and search-then-play stays at or above 34%.
+
+Scale, pivot, or kill
+
+Scale if all thresholds are met and the lift appears among long-tenured users. That confirms the Devotee persona and the original target audience.
+Pivot (retarget) if the thresholds are met but the lift is concentrated in Wanderers and new subscribers, with little effect on long-tenured users. Retarget Spotlight to Wanderers and run new qualitative research with that segment.
+Pivot (fix curation) if browse→play improves but 30+ min sessions don't. Spotlight is getting people to press play but not choosing well, so the collections and curation quality need work.
+Kill if the primary metric shows no significant lift over the holdout, which would mean the earlier lift came from seasonality or selection. Also kill if a guardrail is breached and can't be fixed without removing Spotlight's core design.
+- **Draft your full hypothesis sentence , one to three sentences; quote the metric, name the persona, name the outcome:** Based on Priya's twenty-minute scroll ending in a DVD, Marcus being shown three more action sequels, and a funnel where 42 of every 100 visitors browse without playing (71% browse → 29% play) while 30+ minute sessions have fallen from 19% to 11%, I believe that replacing an unguided 15,000-title catalog with bounded, human-curated collections for taste-driven viewers, the Stranded Devotee, will result in more visits ending in a committed watch and, through that, higher retention and lower churn, as measured by a 3-point increase (11% → 14%, about 27% relative) in the share of sessions reaching a 30+ minute watch compared with a holdout group. I will protect weekly sessions per Power User (at least 4.6 a week against a 4.8 baseline) and search-then-play (at least 34%), and will make a go/no-go decision after a 90-day randomized test with a Day 30 guardrail checkpoint.
