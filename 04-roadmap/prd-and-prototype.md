@@ -158,3 +158,5 @@ Spotlight sits alongside the rows viewers already rely on, so nothing familiar d
 
 ---
 **Builder hook:** Build a working prototype based on this PRD. Use the User Story as the core flow, Functional Requirements as build constraints, and prioritize speed and clarity over visual complexity.
+
+**My prototype, as a link or a screenshot (publish or share from your tool; in Lovable that is Share → Share Preview, in Bolt Publish → Web. No share URL? Screenshot the working flow)** https://lovable.dev/preview/urJpMXXhsOEPYlVyt1z5oI2jRX13iXhy
