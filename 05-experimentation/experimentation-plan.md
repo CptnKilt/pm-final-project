@@ -1,25 +1,40 @@
-# Experimentation Plan
+# A/B Experiment Brief, StreamLine (B2C)
 
-> **Module 5 · ★ Deliverable 5.** Repo file `05-experimentation/experimentation-plan.md` — part of your submission.
-> Do the lab in the **Module 5 · Exercise Guide** (linked from the Module 5 deck), then click **⬇ Download .md** — it saves as this exact file. Commit it here.
-> It becomes the **Experimentation Plan** slide of your Module 6 final deck.
-
-## Overview
-
-_A high-level validation strategy to test your hypothesis before full-scale development._
-
-_____
-
-## What you're testing
-
-| Element | Detail |
+## Parameters
+| Parameter | Decision |
 |---|---|
-| Hypothesis under test | _____ |
-| Experiment design (A/B, etc.) | _____ |
-| Primary metric | _____ |
-| Guardrail metric | _____ |
-| Decision rule (ship / kill / pivot) | _____ |
+| Feature under test | Spotlight Curated Rail |
+| Persona | The Stranded Devotee: a heavy, long-tenured viewer who knows film well and opens the app often, but increasingly leaves without watching anything. For targeting, all of these must hold:  Tenure ≥ 12 months. ≥ 4 sessions/week over the prior 8 weeks. Empty-session rate in the top quartile for the base. Empty-session rate up ≥ 10pp versus the 8 weeks before that. |
+| Expected outcome | A short list of well-chosen titles will help Devotees commit to something, so fewer of their sessions end with nothing watched. Decision rule (ship / iterate / kill): Pre-registered. Readout on [date], decision owner [name]. "Ship" means building the Spotlight rail with curated selection; rolling it out against today's homepage requires a separate test.  Ship if all of these hold: the point estimate of the improvement is ≥ the MDE, at p < 0.05; the watch-minutes guardrail passes; the 30+ minute rate is not significantly worse; sample ratio mismatch χ² p > 0.001; the rail rendered in ≥ 95% of eligible homepage loads, and 10 titles were shown in ≥ 98% of rail views. Iterate if the effect is significant but the point estimate is below the MDE, or rail plays rise without empty sessions falling. Kill if the upper bound of the 95% CI on the improvement is below 1pp, or the guardrail fails. Inconclusive (none of the above): don't ship; decide within one week whether to rerun with a larger sample. Day 14: harm check only. Stop early if watch minutes are down more than 5%. No early ship. |
+| Primary success metric | Empty-session rate among sessions where the homepage loaded with slot 2 on screen ("rail-seen sessions").  A session is empty if it has no play start, or under 2 minutes played. A new session starts after 30 minutes of inactivity. "On screen" means slot 2 is at least 50% visible for ≥ 1 second, logged identically in both arms. Computed per user, then averaged by arm. Users with no rail-seen sessions are excluded from the primary and included in the all-sessions secondary; the excluded share is reported per arm. Secondary metrics: share of rail-seen sessions reaching a 30+ minute watch; empty-session rate across all sessions. |
+| Baseline rate | About 71% (base-wide mobile proxy). Before launch, replace it with the rail-seen empty-session rate for the targeted segment. |
+| Guardrail metric | Watch minutes per user (CUPED on each user's pre-period watch minutes), computed over all randomized users; users who cancel count as zero minutes. Fails if the point estimate is below −2% or the decline is significant at p < 0.05. |
+| Guardrail boundary | Fails if the point estimate is below −2% or the decline is significant at p < 0.05. Stop early if down more than 5% at the Day 14 check. |
+| Second guardrail | Cancellation rate. Fails if significantly higher (p < 0.05). It catches a different harm: watch minutes show people viewing less, while cancellations show people leaving StreamLine.  Your hypothesis will then read cleanly ("We will protect watch minutes per user (CUPED on each user's pre-period watch minutes), computed over all randomized users; users who cancel count as zero minutes. Fails if the point estimate is below −2% or the decline is significant at p < 0.05."), and the boundaries sit in their own fields where the decision rule's "both guardrails" can point to them. |
+| Minimum Detectable Effect | −2 percentage points on rail-seen empty-session rate (≈71% → 69%). |
+| Sample size per arm | 8200 |
+| Traffic split | 50/50, randomized by user. |
+| Test duration | A fixed 28-day run starting on a Monday. Day 14 is a harm-only check with no early ship. |
+| Significance threshold | p < 0.05, two-sided. |
 
-## Findings & decision _(after running it)_
+## Control vs. Variant
+- **Control (A):** Algorithmic Spotlight rail. The existing StreamLine homepage, with slot 2 showing a 10-title rail labeled "Spotlight," filled by the recommendation algorithm's single top-10 for the whole segment (not personalized) and refreshed every Monday.
+- **Variant (B):** Identical to Control, except the 10 titles are chosen by a human curator.
+- **Held constant (isolation check):** Rail setup: same slot (row 2), same 10-title size, same "Spotlight" label, same Monday refresh.
+Selection scope: both lists are one list for the whole segment; neither is personalized.
+Already-watched filter: in both arms, titles the user has already watched are hidden and replaced by the next title on that arm's ranked backup list. The curator supplies 30 ranked titles each week; the algorithm supplies its top 30.
+Cards: the existing card template, showing title art and title only. No curator names, "hand-picked" wording, blurbs, or badges.
+Titles: the curator picks only from titles the algorithm could also serve, and doesn't see the algorithm's picks.
+Homepage layout: the row displaced from slot 2 sits in the same position in both arms.
+Platform: mobile only in both arms.
+Out of scope: no A2, A3, A5, A9, or curator following.
+Everything else: the recommendation algorithm, search, pricing and catalog are unchanged.
 
-_____
+## Hypothesis
+> I believe that Spotlight Curated Rail for The Stranded Devotee: a heavy, long-tenured viewer who knows film well and opens the app often, but increasingly leaves without watching anything. For targeting, all of these must hold:  Tenure ≥ 12 months. ≥ 4 sessions/week over the prior 8 weeks. Empty-session rate in the top quartile for the base. Empty-session rate up ≥ 10pp versus the 8 weeks before that. will result in A short list of well-chosen titles will help Devotees commit to something, so fewer of their sessions end with nothing watched. Decision rule (ship / iterate / kill): Pre-registered. Readout on [date], decision owner [name]. "Ship" means building the Spotlight rail with curated selection; rolling it out against today's homepage requires a separate test.  Ship if all of these hold: the point estimate of the improvement is ≥ the MDE, at p < 0.05; the watch-minutes guardrail passes; the 30+ minute rate is not significantly worse; sample ratio mismatch χ² p > 0.001; the rail rendered in ≥ 95% of eligible homepage loads, and 10 titles were shown in ≥ 98% of rail views. Iterate if the effect is significant but the point estimate is below the MDE, or rail plays rise without empty sessions falling. Kill if the upper bound of the 95% CI on the improvement is below 1pp, or the guardrail fails. Inconclusive (none of the above): don't ship; decide within one week whether to rerun with a larger sample. Day 14: harm check only. Stop early if watch minutes are down more than 5%. No early ship., as measured by a −2 percentage points on rail-seen empty-session rate (≈71% → 69%). change in Empty-session rate among sessions where the homepage loaded with slot 2 on screen ("rail-seen sessions").  A session is empty if it has no play start, or under 2 minutes played. A new session starts after 30 minutes of inactivity. "On screen" means slot 2 is at least 50% visible for ≥ 1 second, logged identically in both arms. Computed per user, then averaged by arm. Users with no rail-seen sessions are excluded from the primary and included in the all-sessions secondary; the excluded share is reported per arm. Secondary metrics: share of rail-seen sessions reaching a 30+ minute watch; empty-session rate across all sessions. within A fixed 28-day run starting on a Monday. Day 14 is a harm-only check with no early ship.. We will protect Watch minutes per user (CUPED on each user's pre-period watch minutes), computed over all randomized users; users who cancel count as zero minutes. Fails if the point estimate is below −2% or the decline is significant at p < 0.05. throughout the test.
+
+## Shipping criteria
+> We will **ship** if Empty-session rate among sessions where the homepage loaded with slot 2 on screen ("rail-seen sessions").  A session is empty if it has no play start, or under 2 minutes played. A new session starts after 30 minutes of inactivity. "On screen" means slot 2 is at least 50% visible for ≥ 1 second, logged identically in both arms. Computed per user, then averaged by arm. Users with no rail-seen sessions are excluded from the primary and included in the all-sessions secondary; the excluded share is reported per arm. Secondary metrics: share of rail-seen sessions reaching a 30+ minute watch; empty-session rate across all sessions. improves by ≥ −2 percentage points on rail-seen empty-session rate (≈71% → 69%). at p < 0.05, two-sided. and Watch minutes per user (CUPED on each user's pre-period watch minutes), computed over all randomized users; users who cancel count as zero minutes. Fails if the point estimate is below −2% or the decline is significant at p < 0.05. does not reach Fails if the point estimate is below −2% or the decline is significant at p < 0.05. Stop early if down more than 5% at the Day 14 check. after A fixed 28-day run starting on a Monday. Day 14 is a harm-only check with no early ship..
+> We will **iterate** if direction is positive but lift is below the MDE.
+> We will **kill** if the primary metric shows no improvement or moves negatively.
+> The read date is fixed at the end of A fixed 28-day run starting on a Monday. Day 14 is a harm-only check with no early ship., no results reviewed before this date.
