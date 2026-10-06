@@ -1,6 +1,6 @@
 # Spotlight Curated Rail, Simplified PRD (StreamLine)
 
-**Author:** Me · **Status:** Draft · **Target:** High-Fidelity Prototype · **Persona:** The Stranded Devotee: A heavy, long-tenured viewer who knows film well and still opens the app often, but increasingly leaves without watching anything.
+**Author:** David McCormack · **Status:** Draft · **Target:** High-Fidelity Prototype · **Persona:** The Stranded Devotee: A heavy, long-tenured viewer who knows film well and still opens the app often, but increasingly leaves without watching anything.
 
 ## 1. The Big Picture
 - **Vision:** Every time a Stranded Devotee opens StreamLine, a short, human-curated Spotlight rail puts a film they'll trust in front of them within seconds, so they press play and stay, instead of scrolling through 15,000 titles and leaving.
