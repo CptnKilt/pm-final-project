@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StreamLine Spotlight · Final Project</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- Saans and Antarctican Mono are not served by Google Fonts; Manrope and JetBrains Mono load as close stand-ins.
+     If Saans / Antarctican Mono are installed locally they are used first. -->
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#07162C; --fg:#ffffff; --muted:#ffffff;
+  --orange:#fb923c; --cyan:#22d3ee; --teal:#34d399; --blue:#60a5fa; --violet:#a78bfa; --pink:#f472b6;
+  --eyebrow:#fdba74;
+  --line:rgba(251,146,60,0.25);
+  --card:rgba(255,255,255,0.035);
+  --head:'Saans','Manrope',system-ui,sans-serif;
+  --body:'Saans','Manrope',system-ui,sans-serif;
+  --mono:'Antarctican Mono','JetBrains Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-snap-type:y mandatory;scroll-behavior:smooth;background:var(--bg)}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-weight:400;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+
+/* ---------- slide frame ---------- */
+section{min-height:100vh;scroll-snap-align:start;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;
+  background:
+    radial-gradient(60vw 40vh at 85% 0%, rgba(251,146,60,0.10), transparent 70%),
+    radial-gradient(50vw 40vh at 0% 100%, rgba(34,211,238,0.07), transparent 70%),
+    var(--bg);}
+.stage{container-type:inline-size;width:min(100vw, calc(100vh * 16 / 9));height:min(100vh, calc(100vw * 9 / 16));overflow:hidden;padding:3.1cqw 4.4cqw 2.6cqw;display:flex;flex-direction:column;gap:1.5cqw;position:relative}
+.stage>.foot{position:absolute;left:4.4cqw;right:4.4cqw;bottom:1.1cqw;display:flex;justify-content:space-between;font-family:var(--mono);font-size:0.816cqw;letter-spacing:.12em;text-transform:uppercase;opacity:.55}
+
+.eyebrow{font-family:var(--mono);font-weight:500;text-transform:uppercase;letter-spacing:.12em;color:var(--eyebrow);font-size:0.984cqw}
+.head{display:flex;align-items:flex-end;justify-content:space-between;gap:2cqw}
+.head h2{font-family:var(--head);font-weight:800;font-size:2.55cqw;line-height:1.05;letter-spacing:-.02em;margin-top:.5cqw}
+.head .sub{font-size:1.14cqw;max-width:38cqw;text-align:right;line-height:1.4}
+.label{font-family:var(--mono);font-weight:500;text-transform:uppercase;letter-spacing:.12em;font-size:0.816cqw;color:var(--eyebrow);margin-bottom:.55cqw;display:flex;align-items:center;gap:.5cqw}
+.label .dot{width:.45cqw;height:.45cqw;border-radius:50%;background:currentColor}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:15px;padding:1.3cqw 1.4cqw;min-width:0}
+.card.hero{background:linear-gradient(140deg,rgba(251,146,60,0.16),rgba(167,139,250,0.07) 55%,rgba(7,22,44,0.2));box-shadow:0 18px 40px -18px rgba(0,0,0,.6)}
+.card.shadow{box-shadow:0 18px 40px -18px rgba(0,0,0,.6)}
+p,li{font-size:1.104cqw;line-height:1.48}
+.small{font-size:0.96cqw;line-height:1.45}
+.mono{font-family:var(--mono)}
+strong{font-weight:700}
+
+.btn{display:inline-flex;align-items:center;gap:.6cqw;font-family:var(--head);font-weight:700;font-size:1.104cqw;padding:.75cqw 1.3cqw;border-radius:999px;text-decoration:none;transition:transform .15s ease, box-shadow .15s ease}
+.btn.primary{background:var(--orange);color:#07162C;box-shadow:0 10px 28px -10px rgba(251,146,60,.8)}
+.btn.ghost{border:1px solid var(--line);color:var(--fg)}
+.btn:hover{transform:translateY(-2px)}
+.btn svg{width:1cqw;height:1cqw}
+
+.pill{display:inline-flex;align-items:center;gap:.4cqw;font-family:var(--mono);font-size:0.864cqw;letter-spacing:.06em;padding:.35cqw .8cqw;border-radius:999px;border:1px solid var(--line);white-space:nowrap}
+.placeholder{border:1px dashed rgba(255,255,255,.35);font-style:italic;opacity:.75}
+
+/* ---------- cover ---------- */
+.cover .stage{justify-content:center;gap:1.8cqw}
+.cover h1{font-family:var(--head);font-weight:800;font-size:4.4cqw;line-height:1.02;letter-spacing:-.03em;max-width:62cqw}
+.cover h1 span{color:var(--orange)}
+.cover .pitch{font-size:1.35cqw;line-height:1.45;max-width:52cqw}
+.cover .meta{display:flex;gap:2.4cqw;align-items:center;flex-wrap:wrap}
+.cover .meta .who{font-family:var(--mono);font-size:1.02cqw;letter-spacing:.08em}
+.cover .links{display:flex;gap:1cqw;align-items:center;flex-wrap:wrap}
+.cover .repo{font-family:var(--mono);font-size:0.96cqw;opacity:.85;text-decoration:none;border-bottom:1px dashed var(--line)}
+.rail{position:absolute;right:4.4cqw;top:50%;transform:translateY(-50%);width:26cqw;display:flex;flex-direction:column;gap:.8cqw}
+.rail .rh{display:flex;justify-content:space-between;align-items:center}
+.rail .tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:.7cqw}
+.tile{aspect-ratio:2/3;border-radius:12px;border:1px solid var(--line);position:relative;overflow:hidden;box-shadow:0 14px 30px -14px rgba(0,0,0,.7)}
+.tile::after{content:attr(data-n);position:absolute;left:.6cqw;bottom:.5cqw;font-family:var(--mono);font-size:0.84cqw;letter-spacing:.1em}
+.t1{background:linear-gradient(160deg,#fb923c,#7c2d12)}
+.t2{background:linear-gradient(160deg,#22d3ee,#0c4a6e)}
+.t3{background:linear-gradient(160deg,#a78bfa,#3b0764)}
+.t4{background:linear-gradient(160deg,#34d399,#064e3b)}
+.t5{background:linear-gradient(160deg,#f472b6,#831843)}
+.t6{background:linear-gradient(160deg,#60a5fa,#1e3a8a)}
+.rail .note{font-size:0.936cqw;line-height:1.45;border-left:2px solid var(--orange);padding-left:.8cqw}
+
+/* ---------- grids ---------- */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:1.2cqw}
+.grow{flex:1;min-height:0}
+.stage>*{flex-shrink:0}.stage>.grow{flex-shrink:1}
+.callout{border-radius:15px;padding:1.3cqw 1.5cqw;background:linear-gradient(120deg,rgba(251,146,60,.18),rgba(34,211,238,.08));border:1px solid rgba(251,146,60,.55);box-shadow:0 18px 40px -18px rgba(0,0,0,.6);display:grid;grid-template-columns:1fr auto;gap:1.6cqw;align-items:center}
+.callout p{font-size:1.116cqw}
+.stats{display:grid;grid-template-columns:repeat(3,auto);gap:.8cqw}
+.stat{border:1px solid var(--line);border-radius:12px;padding:.7cqw .9cqw;background:rgba(7,22,44,.55);min-width:8.5cqw}
+.stat b{display:block;font-family:var(--mono);font-weight:500;font-size:1.55cqw;letter-spacing:-.02em;color:var(--orange)}
+.stat span{font-size:0.816cqw;font-family:var(--mono);letter-spacing:.06em;text-transform:uppercase;line-height:1.3;display:block;margin-top:.2cqw}
+.hook{font-family:var(--head);font-weight:700;font-size:1.42cqw;line-height:1.32;letter-spacing:-.01em}
+.minis{display:grid;grid-template-columns:1fr 1fr;gap:1cqw;margin-top:1cqw;padding-top:1cqw;border-top:1px solid var(--line)}
+
+/* ---------- research ---------- */
+.research{display:grid;grid-template-columns:1.05fr 1fr;gap:1.2cqw}
+.quote{border-left:2px solid var(--cyan);padding-left:.8cqw;margin-top:.6cqw}
+.quote .who{font-family:var(--mono);font-size:0.792cqw;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan);margin-top:.2cqw}
+.quote.bug{border-color:var(--pink)}.quote.bug .who{color:var(--pink)}
+.kv{display:grid;grid-template-columns:5.2cqw 1fr;gap:.45cqw .9cqw;align-items:baseline}
+.kv dt{font-family:var(--mono);font-size:0.792cqw;letter-spacing:.1em;text-transform:uppercase;color:var(--eyebrow)}
+.kv dd{font-size:1.032cqw;line-height:1.42}
+.future{display:grid;grid-template-columns:repeat(2,1fr);gap:.7cqw}
+.fstage{border:1px solid rgba(52,211,153,.35);border-radius:12px;padding:.75cqw .85cqw;background:rgba(52,211,153,.05)}
+.fstage h4{font-family:var(--head);font-weight:700;font-size:1.08cqw;display:flex;justify-content:space-between;margin-bottom:.25cqw}
+.fstage h4 em{font-style:normal;font-family:var(--mono);font-weight:400;font-size:0.792cqw;color:var(--teal);letter-spacing:.08em;text-transform:uppercase}
+.journey{display:grid;grid-template-columns:repeat(5,1fr);gap:.6cqw;position:relative}
+.jstep{border:1px solid var(--line);border-radius:12px;padding:.75cqw .85cqw;background:var(--card);position:relative}
+.jstep .n{font-family:var(--mono);font-size:0.816cqw;color:var(--eyebrow);letter-spacing:.1em}
+.jstep h4{font-family:var(--head);font-weight:700;font-size:1.104cqw;margin:.2cqw 0 .25cqw}
+.jstep p{font-size:0.912cqw;line-height:1.4}
+.jstep.misery{border-color:var(--pink);background:linear-gradient(160deg,rgba(244,114,182,.18),rgba(244,114,182,.04));box-shadow:0 0 0 1px rgba(244,114,182,.35),0 16px 34px -14px rgba(244,114,182,.45)}
+.misery-band{position:absolute;top:-1.05cqw;left:calc(40% + .24cqw);width:calc(40% - .48cqw);text-align:center;font-family:var(--mono);font-size:0.792cqw;letter-spacing:.12em;text-transform:uppercase;color:var(--pink)}
+.misery-band::before{content:"";display:block;height:1px;background:var(--pink);margin-bottom:-.5cqw;opacity:.6;transform:translateY(.5cqw)}
+.misery-band span{background:var(--bg);padding:0 .6cqw;position:relative}
+.frustration{margin-top:.6cqw;font-size:0.984cqw;line-height:1.45;display:flex;gap:.8cqw;align-items:baseline}
+.frustration b{color:var(--pink);font-family:var(--mono);font-weight:500;font-size:0.792cqw;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap}
+
+/* ---------- blueprint ---------- */
+.blueprint{display:grid;grid-template-columns:2.1fr 1fr;gap:1.2cqw}
+.board{display:grid;grid-template-columns:1.25fr 1.25fr .85fr .85fr;gap:.7cqw}
+.col{border-radius:14px;padding:.8cqw;background:rgba(255,255,255,.025);border:1px solid var(--line);display:flex;flex-direction:column;gap:.55cqw}
+.col h3{font-family:var(--mono);font-weight:500;font-size:0.864cqw;letter-spacing:.12em;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+.col h3 small{font-size:0.744cqw;opacity:.75;letter-spacing:.06em}
+.col.now{border-color:rgba(251,146,60,.6);background:linear-gradient(180deg,rgba(251,146,60,.12),rgba(251,146,60,.02))}
+.col.now h3{color:var(--orange)}.col.next h3{color:var(--cyan)}.col.later h3{color:var(--blue)}.col.cut h3{color:var(--pink)}
+.feat{border-radius:10px;background:rgba(7,22,44,.7);border:1px solid rgba(255,255,255,.1);padding:.6cqw .7cqw}
+.feat .top{display:flex;justify-content:space-between;align-items:center;gap:.4cqw}
+.feat .id{font-family:var(--mono);font-size:0.792cqw;letter-spacing:.06em;opacity:.85}
+.feat .sc{font-family:var(--mono);font-size:0.744cqw;letter-spacing:.04em;white-space:nowrap}
+.feat h4{font-family:var(--head);font-weight:700;font-size:1.008cqw;line-height:1.25;margin:.2cqw 0}
+.feat p{font-size:0.84cqw;line-height:1.4}
+.feat .q{font-family:var(--mono);font-size:0.72cqw;letter-spacing:.08em;text-transform:uppercase;opacity:.8}
+.col.cut .feat h4{text-decoration:line-through;text-decoration-color:rgba(244,114,182,.7)}
+.prd{display:flex;flex-direction:column;gap:.75cqw}
+.prd .row{border-bottom:1px solid rgba(251,146,60,.15);padding-bottom:.6cqw}
+.prd .row:last-of-type{border-bottom:0}
+.big{font-family:var(--mono);font-weight:500;font-size:1.35cqw;color:var(--orange)}
+.big small{font-size:0.9cqw;color:var(--fg)}
+.btns{display:flex;flex-wrap:wrap;gap:.6cqw;margin-top:auto}
+
+/* ---------- validation ---------- */
+.val{display:grid;grid-template-columns:1fr 1fr 1fr;grid-template-rows:auto auto 1fr;gap:1cqw}
+.cv{display:grid;grid-template-columns:1fr auto 1fr;gap:.6cqw;align-items:stretch}
+.cv .arm{border-radius:12px;padding:.8cqw .9cqw;border:1px solid var(--line);background:rgba(7,22,44,.6)}
+.cv .arm.v{border-color:rgba(251,146,60,.6);background:rgba(251,146,60,.08)}
+.cv .vs{align-self:center;font-family:var(--mono);font-size:0.9cqw;opacity:.7}
+.arm h4{font-family:var(--head);font-weight:700;font-size:1.14cqw;margin:.15cqw 0}
+.metricrow{display:grid;grid-template-columns:repeat(3,1fr);gap:.6cqw;margin-top:.5cqw}
+.mtile{border-radius:12px;border:1px solid var(--line);padding:.7cqw .8cqw;background:rgba(7,22,44,.6)}
+.mtile b{display:block;font-family:var(--mono);font-weight:500;font-size:1.6cqw;color:var(--orange);line-height:1.1}
+.mtile.c b{color:var(--cyan)}.mtile.t b{color:var(--teal)}
+.mtile span{font-family:var(--mono);font-size:0.744cqw;letter-spacing:.08em;text-transform:uppercase;display:block;margin-top:.25cqw;line-height:1.35}
+.rules{display:grid;grid-template-columns:repeat(4,1fr);gap:.7cqw}
+.rule{border-radius:12px;padding:.8cqw .9cqw;border:1px solid var(--line);background:var(--card);border-top-width:3px}
+.rule h4{font-family:var(--mono);font-weight:500;font-size:0.9cqw;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.35cqw}
+.rule p{font-size:0.936cqw;line-height:1.42}
+.rule.s{border-top-color:var(--teal)}.rule.s h4{color:var(--teal)}
+.rule.p1{border-top-color:var(--cyan)}.rule.p1 h4{color:var(--cyan)}
+.rule.p2{border-top-color:var(--violet)}.rule.p2 h4{color:var(--violet)}
+.rule.k{border-top-color:var(--pink)}.rule.k h4{color:var(--pink)}
+.timeline{display:flex;gap:.6cqw;margin-top:.5cqw}
+.timeline div{flex:1;border-radius:10px;border:1px solid var(--line);padding:.55cqw .7cqw;background:rgba(7,22,44,.6)}
+.timeline b{font-family:var(--mono);font-weight:500;font-size:0.864cqw;color:var(--eyebrow);letter-spacing:.08em;display:block}
+.guards li{list-style:none;padding-left:1.1cqw;position:relative;margin-top:.35cqw;font-size:1.008cqw}
+.guards li::before{content:"";position:absolute;left:0;top:.55cqw;width:.5cqw;height:.5cqw;border-radius:2px;background:var(--teal)}
+
+/* ---------- launch ---------- */
+.launch{display:grid;grid-template-columns:.9fr 1.6fr;gap:1.2cqw}
+.gtm{display:flex;flex-direction:column;gap:.8cqw}
+.gtm .f{display:grid;grid-template-columns:5cqw 1fr;gap:.6cqw;align-items:center}
+.gtm .f dt{font-family:var(--mono);font-size:0.792cqw;letter-spacing:.12em;text-transform:uppercase;color:var(--eyebrow)}
+.gtm .f dd{display:flex;flex-wrap:wrap;gap:.4cqw}
+.pill.o{border-color:rgba(251,146,60,.7);color:var(--orange)}
+.pill.c{border-color:rgba(34,211,238,.6);color:var(--cyan)}
+.pill.t{border-color:rgba(52,211,153,.6);color:var(--teal)}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:.6cqw}
+.kpi{border-radius:12px;padding:.75cqw .8cqw;border:1px solid var(--line);background:rgba(7,22,44,.6);box-shadow:0 14px 30px -16px rgba(0,0,0,.7);display:flex;flex-direction:column;gap:.3cqw}
+.kpi .tag{font-family:var(--mono);font-size:0.696cqw;letter-spacing:.12em;text-transform:uppercase}
+.kpi h4{font-family:var(--head);font-weight:700;font-size:0.984cqw;line-height:1.25}
+.kpi .tgt{font-family:var(--mono);font-weight:500;font-size:1.38cqw;color:var(--orange);line-height:1.15}
+.kpi p{font-size:0.816cqw;line-height:1.38}
+.kpi.pr{border-color:rgba(251,146,60,.6)}
+.kpi.gr .tag{color:var(--teal)}.kpi.pr .tag{color:var(--orange)}.kpi.se .tag{color:var(--cyan)}.kpi.st .tag{color:var(--violet)}
+table.sig{width:100%;border-collapse:collapse}
+.sig th{font-family:var(--mono);font-weight:500;font-size:0.72cqw;letter-spacing:.12em;text-transform:uppercase;color:var(--eyebrow);text-align:left;padding:0 .5cqw .4cqw;border-bottom:1px solid var(--line)}
+.sig td{font-size:0.84cqw;line-height:1.36;padding:.42cqw .5cqw;border-bottom:1px solid rgba(255,255,255,.07);vertical-align:top}
+.sig td:first-child{font-weight:700;white-space:nowrap}
+.sig td:first-child::before{content:"";display:inline-block;width:.45cqw;height:.45cqw;border-radius:50%;background:var(--pink);margin-right:.45cqw;transform:translateY(-.08cqw)}
+.badsig{border-color:rgba(244,114,182,.55);background:linear-gradient(160deg,rgba(244,114,182,.10),rgba(7,22,44,.2))}
+.badsig .label{color:var(--pink)}
+.decision{border-left:3px solid var(--cyan);padding:.2cqw 0 .2cqw .9cqw}
+.decision h4{font-family:var(--head);font-weight:800;font-size:1.26cqw;color:var(--cyan);margin-bottom:.25cqw}
+.decision p{font-size:0.912cqw;line-height:1.45}
+
+/* ---------- story ---------- */
+.story{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:1.2cqw}
+.story .card{display:flex;flex-direction:column;gap:.6cqw}
+.story h3{font-family:var(--head);font-weight:800;font-size:1.55cqw;letter-spacing:-.01em}
+.story p{font-size:1.224cqw;line-height:1.55}
+.story .ic{width:2.4cqw;height:2.4cqw;border-radius:10px;display:grid;place-items:center;font-family:var(--mono);font-weight:500;font-size:1.2cqw;color:#07162C}
+
+/* ---------- thanks ---------- */
+.thanks .stage{justify-content:center;align-items:flex-start;gap:1.6cqw}
+.thanks h2{font-family:var(--head);font-weight:800;font-size:6.0cqw;letter-spacing:-.04em;line-height:.95}
+.thanks h2 span{color:var(--orange)}
+.submit{display:inline-flex;align-items:center;gap:1cqw;padding:1cqw 1.6cqw;border-radius:999px;background:linear-gradient(90deg,rgba(251,146,60,.22),rgba(244,114,182,.14));border:1px solid rgba(251,146,60,.7);font-family:var(--head);font-weight:700;font-size:1.44cqw;box-shadow:0 0 0 6px rgba(251,146,60,.08),0 18px 40px -16px rgba(251,146,60,.6)}
+.submit i{width:.8cqw;height:.8cqw;border-radius:50%;background:var(--orange);box-shadow:0 0 0 .4cqw rgba(251,146,60,.25);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 .8cqw rgba(251,146,60,0)}}
+.repobig{font-family:var(--mono);font-size:1.4cqw;text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:.2cqw}
+.thanks .row{display:flex;gap:1cqw;align-items:center;flex-wrap:wrap}
+
+/* ---------- chrome: progress + dots + hint ---------- */
+#progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--orange),var(--pink));z-index:50;box-shadow:0 0 12px rgba(251,146,60,.6)}
+#dots{position:fixed;right:14px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:12px;z-index:50}
+#dots a{width:9px;height:9px;border-radius:50%;border:1px solid rgba(251,146,60,.7);display:block;position:relative;transition:all .2s ease}
+#dots a.on{background:var(--orange);transform:scale(1.35);box-shadow:0 0 10px rgba(251,146,60,.8)}
+#dots a span{position:absolute;right:18px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;opacity:0;pointer-events:none;transition:opacity .15s;background:rgba(7,22,44,.9);padding:3px 8px;border-radius:6px;border:1px solid var(--line)}
+#dots a:hover span{opacity:1}
+#hint{position:fixed;left:50%;transform:translateX(-50%);bottom:10px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;opacity:.45;z-index:50}
+
+
+/* ---------- density tuning ---------- */
+#story .story p{font-size:1.42cqw;line-height:1.6}
+#story .story h3{font-size:1.9cqw}
+#blueprint .feat h4{font-size:1.1cqw}
+#blueprint .feat p{font-size:.93cqw}
+#blueprint .feat .id,#blueprint .feat .sc{font-size:.8cqw}
+#blueprint .feat .q{font-size:.72cqw}
+#blueprint .col h3{font-size:.95cqw}
+#blueprint .prd p.small{font-size:1.05cqw}
+#blueprint .big{font-size:1.9cqw}
+#research .research .kv dd,#research .research p.small{font-size:1.1cqw}
+#research .fstage h4{font-size:1.2cqw}
+#research .jstep p{font-size:.95cqw}#research .jstep h4{font-size:1.15cqw}
+#validation .stage{justify-content:center}
+#validation p,#validation li,#validation .small{font-size:1.1cqw}
+#validation .rule p{font-size:1.02cqw}
+#validation .mtile b{font-size:2.1cqw}
+#validation .arm h4{font-size:1.2cqw}
+#launch .sig td{font-size:.95cqw;padding:.6cqw .5cqw}
+#launch .sig th{font-size:.75cqw}
+#launch .kpi h4{font-size:1cqw}#launch .kpi p{font-size:.86cqw}#launch .kpi .tgt{font-size:1.45cqw}
+#launch .decision p{font-size:1cqw}
+#launch .pill{font-size:.86cqw}
+
+/* ---------- narrow / portrait fallback ---------- */
+@media (max-aspect-ratio: 1/1){
+  html{scroll-snap-type:none}
+  section{min-height:auto;padding:28px 0}
+  .stage{width:100vw;height:auto;overflow:visible;padding:24px 18px 40px;container-type:normal;gap:16px}
+  .stage *{font-size:14px !important}
+  .cover h1{font-size:30px !important}.head h2,.thanks h2{font-size:26px !important}
+  .g2,.research,.blueprint,.board,.val,.rules,.launch,.kpis,.story,.journey,.future,.metricrow,.callout,.stats,.minis{grid-template-columns:1fr !important;grid-template-rows:auto !important}
+  .rail,.misery-band,#dots,#hint{display:none}
+  .stage>.foot{position:static}
+}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}.submit i{animation:none}}
+</style>
+</head>
+<body>
+<div id="progress"></div>
+<nav id="dots" aria-label="Slides"></nav>
+<div id="hint">↑ ↓ · Space · Home / End · Esc</div>
+
+<!-- ================= 1 · COVER ================= -->
+<section class="cover" id="cover" data-title="Cover">
+  <div class="stage">
+    <div class="eyebrow">Product School · PM Certification · Final Project</div>
+    <h1>StreamLine Spotlight: From Endless Scrolling to <span>Something Worth Watching</span></h1>
+    <p class="pitch">Spotlight gives StreamLine viewers a hand-picked row of standout titles, so they spend less time scrolling and more time watching something they'll love.</p>
+    <div class="meta">
+      <div class="who">David McCormack - PM Cohort - Oct 2026</div>
+    </div>
+    <div class="links">
+      <a class="btn primary" href="https://lovable.dev/preview/urJpMXXhsOEPYlVyt1z5oI2jRX13iXhy" target="_blank" rel="noopener">View prototype
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+      <a class="repo" href="https://github.com/CptnKilt/pm-final-project" target="_blank" rel="noopener">github.com/CptnKilt/pm-final-project</a>
+    </div>
+    <aside class="rail" aria-hidden="true">
+      <div class="rh"><span class="eyebrow">Spotlight · Tonight's collection</span><span class="pill">6 titles</span></div>
+      <div class="tiles">
+        <div class="tile t1" data-n="01"></div><div class="tile t2" data-n="02"></div><div class="tile t3" data-n="03"></div>
+        <div class="tile t4" data-n="04"></div><div class="tile t5" data-n="05"></div><div class="tile t6" data-n="06"></div>
+      </div>
+      <p class="note">15,000 titles → one bounded, human-curated shortlist.</p>
+    </aside>
+    <div class="foot"><span>StreamLine Spotlight</span><span>01 / 08</span></div>
+  </div>
+</section>
+
+<!-- ================= 2 · STRATEGY ================= -->
+<section id="strategy" data-title="Strategy">
+  <div class="stage">
+    <div class="head">
+      <div><div class="eyebrow">Slide 5 · Strategy</div><h2>The library is huge. The guide is gone.</h2></div>
+      <p class="sub"><strong>Scenario:</strong> StreamLine Spotlight (B2C)</p>
+    </div>
+    <div class="g2 grow">
+      <div class="card hero">
+        <div class="label"><i class="dot"></i>Problem hook</div>
+        <p class="hook">StreamLine is losing its most valuable viewers not because it lacks content, but because they have to leave the platform to discover what’s worth watching—and every month we wait gives curated competitors another chance to become the trusted guide StreamLine used to be.</p>
+        <div class="minis">
+          <div><div class="label">Strategic crisis</div><p class="small">StreamLine may still be the largest streaming library, but it risks losing its position as a discovery destination—shifting from a differentiated market leader to a high-volume utility while curated competitors capture the loyalty, engagement, and trust of its most valuable viewers.</p></div>
+          <div><div class="label" style="color:var(--pink)">Moment of misery</div><p class="small">Right now, a StreamLine viewer who wants a good film has to leave StreamLine to figure out what to watch, then come back only to press play. The app handles playback, but the discovery happens somewhere else.</p></div>
+        </div>
+      </div>
+      <div class="card shadow" style="display:flex;flex-direction:column;gap:.8cqw">
+        <div class="label" style="color:var(--teal)"><i class="dot"></i>Value proposition</div>
+        <p style="font-size:1.296cqw;line-height:1.5">For high-engagement, taste-driven viewers who once relied on StreamLine to discover what to watch, we will deliver <strong style="color:var(--orange)">StreamLine Spotlight</strong>, a dedicated, human-curated experience with bounded collections, named curators, and a genuine editorial point of view—restoring StreamLine as a trusted guide, not just a massive library because churn in this group compounds, specialized services are winning them over now, and winning them back after they've settled elsewhere will cost far more than keeping them.</p>
+        <div style="margin-top:auto;display:flex;gap:.5cqw;flex-wrap:wrap">
+          <span class="pill t">Human-curated</span><span class="pill t">Bounded collections</span><span class="pill t">Named curators</span><span class="pill t">Editorial point of view</span>
+        </div>
+      </div>
+    </div>
+    <div class="callout">
+      <div>
+        <div class="label"><i class="dot"></i>Data-backed hypothesis</div>
+        <p>Based on Priya's twenty-minute scroll ending in a DVD, Marcus being shown three more action sequels, and a funnel where 42 of every 100 visitors browse without playing (71% browse → 29% play) while 30+ minute sessions have fallen from 19% to 11%, I believe that replacing an unguided 15,000-title catalog with bounded, human-curated collections for taste-driven viewers, the Stranded Devotee, will result in more visits ending in a committed watch and, through that, higher retention and lower churn, as measured by a 3-point increase (11% → 14%, about 27% relative) in the share of sessions reaching a 30+ minute watch compared with a holdout group. I will protect weekly sessions per Power User (at least 4.6 a week against a 4.8 baseline) and search-then-play (at least 34%), and will make a go/no-go decision after a 90-day randomized test with a Day 30 guardrail checkpoint.</p>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>42/100</b><span>Browse, never play</span></div>
+        <div class="stat"><b>19→11%</b><span>30+ min sessions</span></div>
+        <div class="stat"><b>→14%</b><span>Target vs holdout</span></div>
+      </div>
+    </div>
+    <div class="foot"><span>Strategy · Module 1 + 3</span><span>02 / 08</span></div>
+  </div>
+</section>
+
+<!-- ================= 3 · RESEARCH ================= -->
+<section id="research" data-title="Research">
+  <div class="stage">
+    <div class="head">
+      <div><div class="eyebrow">Slide 6 · Research</div><h2>The Stranded Devotee</h2></div>
+      <p class="sub">A heavy, long-tenured viewer who knows film well and still opens the app often, but increasingly leaves without watching anything.</p>
+    </div>
+    <div class="research grow">
+      <div class="card shadow">
+        <div class="label"><i class="dot"></i>Workaround &amp; evidence</div>
+        <dl class="kv">
+          <dt>Goal</dt><dd>Find something new that fits their taste as a person, not the "more of the same genre" the algorithm offers.</dd>
+          <dt>Workaround</dt><dd>Physical media they already own. Priya puts on a DVD. It isn't a discovery tool. It's a way to avoid choosing at all. None documented for Marcus. He says he misses having a human curator but doesn't mention a replacement.</dd>
+        </dl>
+        <div class="quote"><p class="small">"I open the app, scroll for like twenty minutes, and close it without watching anything… I ended up going back to a DVD."</p><div class="who">Priya · UXR-01</div></div>
+        <div class="quote"><p class="small">"It recommended three more action sequels because I watched one."</p><div class="who">Marcus · UXR-02</div></div>
+        <div class="quote bug"><p class="small">Recommendations surface near-duplicate titles from the same franchise, and users flag them as repetitive.</p><div class="who">BUG-1091 · High</div></div>
+      </div>
+      <div class="card">
+        <div class="label" style="color:var(--teal)"><i class="dot"></i>Future-state journey with Spotlight</div>
+        <div class="future">
+          <div class="fstage"><h4>Arrive <em>Oriented</em></h4><p class="small">The viewer lands on tonight's single curated collection instead of the 15,000-title wall.</p></div>
+          <div class="fstage"><h4>Browse <em>Curious</em></h4><p class="small">They explore a short collection from a named curator, so browsing has a clear end.</p></div>
+          <div class="fstage"><h4>Choose <em>Confident</em></h4><p class="small">A curator's note explains why the title matters, so they pick without second-guessing. This replaces the franchise duplicates.</p></div>
+          <div class="fstage"><h4>Watch &amp; Return <em>Known again</em></h4><p class="small">They finish, follow the curator, and the next collection is already waiting.</p></div>
+        </div>
+        <p class="small" style="margin-top:.7cqw;opacity:.8"><a href="https://github.com/CptnKilt/pm-final-project/blob/main/02-discovery/spotlight-future-state-journey.md" target="_blank" rel="noopener" style="text-decoration:none;border-bottom:1px dashed var(--line)">Full journey map →</a></p>
+      </div>
+    </div>
+    <div>
+      <div class="label" style="margin-bottom:1.3cqw"><i class="dot"></i>Today's journey</div>
+      <div class="journey">
+        <div class="misery-band"><span>▲ Moment of misery</span></div>
+        <div class="jstep"><div class="n">01</div><h4>Open the app</h4><p>With the intent to watch. Priya has been a heavy viewer for 14 years, so she's still coming back.</p></div>
+        <div class="jstep"><div class="n">02</div><h4>Browse home rows</h4><p>Priya scrolls for about twenty minutes across a catalog of roughly 15,000 titles.</p></div>
+        <div class="jstep misery"><div class="n">03</div><h4>Check personalized row</h4><p>"Because you watched" offers Marcus three more action sequels after one action film (BUG-1091).</p></div>
+        <div class="jstep misery"><div class="n">04</div><h4>Abandon the session</h4><p>The app closes without anything being watched.</p></div>
+        <div class="jstep"><div class="n">05</div><h4>Fall back outside</h4><p>Something familiar outside the app. Priya watches a DVD.</p></div>
+      </div>
+      <div class="frustration"><b>Core frustration</b><span>The personalized row is the one place the platform claims to know this viewer, and it returns more of the same genre: "I'm not a genre, I'm a person." After that there's nothing left to try, so the session ends.</span></div>
+    </div>
+    <div class="foot"><span>Research · Module 2</span><span>03 / 08</span></div>
+  </div>
+</section>
+
+<!-- ================= 4 · BLUEPRINT ================= -->
+<section id="blueprint" data-title="Blueprint">
+  <div class="stage">
+    <div class="head">
+      <div><div class="eyebrow">Slide 7 · Blueprint</div><h2>Roadmap, PRD &amp; prototype</h2></div>
+      <p class="sub"><strong>Team:</strong> 2 engineers + 1 designer · Scored on value × effort</p>
+    </div>
+    <div class="blueprint grow">
+      <div class="board">
+        <div class="col now"><h3>Now <small>3-week sprint</small></h3>
+          <div class="feat"><div class="top"><span class="id">A1</span><span class="sc">V5 · E2</span></div><h4>Spotlight Curated Rail</h4><p>It hits Priya's 20-minute scroll head-on by turning 15,000 titles into a short, trusted shortlist. It uses existing homepage rail infrastructure and is the thing the exposed/non-exposed split measures.</p><div class="q">Quick Win</div></div>
+          <div class="feat"><div class="top"><span class="id">A9</span><span class="sc">V5 · E2</span></div><h4>Advanced Filter Engine</h4><p>Enables the user to refine their searching to help them find what they are looking for instead of scrolling the entire catalog or searching for a specific movie title.</p><div class="q">Quick Win</div></div>
+        </div>
+        <div class="col next"><h3>Next <small>1–2 sprints</small></h3>
+          <div class="feat"><div class="top"><span class="id">A2</span><span class="sc">V4 · E3</span></div><h4>'Why You'll Love This' Label</h4><p>A stated reason is exactly what converts a Devotee from browse to play. As specced, the reasons are AI-generated and appear on hover, and there's no hover on TV.</p><div class="q">Major Project</div></div>
+          <div class="feat"><div class="top"><span class="id">A5</span><span class="sc">V5 · E4</span></div><h4>Personalized Spotlight Queue</h4><p>The only feature that fixes both Priya's paralysis and Marcus's sequel loop, because it matches on taste rather than genre.</p><div class="q">Major Project</div></div>
+        </div>
+        <div class="col later"><h3>Later</h3>
+          <div class="feat"><div class="top"><span class="id">A3</span><span class="sc">V3 · E1</span></div><h4>Hidden Gem Badge</h4><p>Adds a signal without cutting down the choice set.</p><div class="q">Fill-In</div></div>
+          <div class="feat"><div class="top"><span class="id">A6</span><span class="sc">V2 · E2</span></div><h4>Spotlight Digest Email</h4><p>The leak happens inside the session, not in getting them there.</p><div class="q">Fill-In</div></div>
+        </div>
+        <div class="col cut"><h3>✂ Cut</h3>
+          <div class="feat"><div class="top"><span class="id">A4</span><span class="sc">V2 · E3</span></div><h4>Mood-Based Entry Point</h4><div class="q">Time Sinker</div></div>
+          <div class="feat"><div class="top"><span class="id">A7</span><span class="sc">V3 · E4</span></div><h4>Curator Profiles</h4><div class="q">Time Sinker</div></div>
+          <div class="feat"><div class="top"><span class="id">A8</span><span class="sc">V1 · E5</span></div><h4>Watch Party</h4><div class="q">Time Sinker</div></div>
+          <div class="feat"><div class="top"><span class="id">A10</span><span class="sc">V1 · E5</span></div><h4>Offline Download</h4><div class="q">Time Sinker</div></div>
+        </div>
+      </div>
+      <div class="card hero prd">
+        <div class="label"><i class="dot"></i>PRD highlights</div>
+        <div class="row"><div class="label" style="margin-bottom:.25cqw">Primary metric</div><div class="big">11% <small>→ toward 19%</small></div><p class="small">Share of sessions reaching a 30+ minute watch, Spotlight-exposed vs non-exposed.</p></div>
+        <div class="row"><div class="label" style="margin-bottom:.25cqw">Guardrail</div><div class="big">4.8 <small>sessions / week</small></div><p class="small">Weekly sessions per Power User must not fall below baseline.</p></div>
+        <div class="row"><div class="label" style="margin-bottom:.25cqw">Human override</div><p class="small">A9 because this gives the user the ability to refine their search instead of scrolling through the entire catalog.</p></div>
+        <div class="row"><div class="label" style="margin-bottom:.25cqw">Scope protected from</div><p class="small">A8 Watch Party and A10 Offline Download. Both Sales requests were cut by both me and the AI.</p></div>
+        <div class="btns">
+          <a class="btn primary" href="https://lovable.dev/preview/urJpMXXhsOEPYlVyt1z5oI2jRX13iXhy" target="_blank" rel="noopener">View prototype <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+          <a class="btn ghost" href="https://github.com/CptnKilt/pm-final-project/blob/main/04-roadmap/roadmap-prd-prototype.md" target="_blank" rel="noopener">Roadmap &amp; PRD</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>Blueprint · Module 4</span><span>04 / 08</span></div>
+  </div>
+</section>
+
+<!-- ================= 5 · VALIDATION ================= -->
+<section id="validation" data-title="Validation">
+  <div class="stage">
+    <div class="head">
+      <div><div class="eyebrow">Slide 8 · Validation</div><h2>Experiment plan</h2></div>
+      <p class="sub">90-day randomized test with a concurrent holdout, to separate a real effect from seasonality and self-selection.</p>
+    </div>
+    <div class="g2">
+      <div class="card hero">
+        <div class="label"><i class="dot"></i>Hypothesis under test</div>
+        <p style="font-size:1.224cqw">Replacing an unguided 15,000-title catalog with bounded, human-curated collections for the Stranded Devotee will result in more visits ending in a committed watch and, through that, higher retention and lower churn.</p>
+        <div class="label" style="margin-top:.9cqw"><i class="dot"></i>Control vs variant</div>
+        <div class="cv">
+          <div class="arm"><span class="eyebrow" style="font-size:0.72cqw">Control</span><h4>Holdout · 10–20%</h4><p class="small">Doesn't see Spotlight.</p></div>
+          <div class="vs">vs</div>
+          <div class="arm v"><span class="eyebrow" style="font-size:0.72cqw">Variant</span><h4>Spotlight</h4><p class="small">Bounded, human-curated collections.</p></div>
+        </div>
+        <p class="small" style="margin-top:.5cqw;opacity:.85">With 1.49M mobile daily active users, a 10–20% holdout is large enough to detect a meaningful difference.</p>
+      </div>
+      <div class="card shadow">
+        <div class="label"><i class="dot"></i>Primary metric · 30+ min session share</div>
+        <div class="metricrow">
+          <div class="mtile"><b>11%</b><span>Baseline</span></div>
+          <div class="mtile c"><b>+3 pts</b><span>MDE · 11% → 14%, ~27% relative</span></div>
+          <div class="mtile t"><b>+6 pts</b><span>Month 1 retention vs holdout</span></div>
+        </div>
+        <div class="label" style="margin-top:.9cqw;color:var(--teal)"><i class="dot"></i>Guardrails</div>
+        <ul class="guards">
+          <li>Power User sessions stay at or above <strong>4.6 a week</strong> (within 5% of 4.8)</li>
+          <li>Search-then-play stays at or above <strong>34%</strong></li>
+        </ul>
+        <div class="timeline">
+          <div><b>DAY 30</b><span class="small">Stop early only if a guardrail is breached</span></div>
+          <div><b>DAY 90</b><span class="small">Scale, pivot, or kill</span></div>
+        </div>
+      </div>
+    </div>
+    <div class="rules">
+      <div class="rule s"><h4>Scale</h4><p>If all thresholds are met and the lift appears among long-tenured users. That confirms the Devotee persona and the original target audience.</p></div>
+      <div class="rule p1"><h4>Pivot · retarget</h4><p>If the thresholds are met but the lift is concentrated in Wanderers and new subscribers, with little effect on long-tenured users.</p></div>
+      <div class="rule p2"><h4>Pivot · fix curation</h4><p>If browse→play improves but 30+ min sessions don't. Spotlight is getting people to press play but not choosing well.</p></div>
+      <div class="rule k"><h4>Kill</h4><p>If the primary metric shows no significant lift over the holdout, or a guardrail is breached and can't be fixed without removing Spotlight's core design.</p></div>
+    </div>
+    <div class="card placeholder" style="padding:.7cqw 1.2cqw"><p class="small"><span class="mono" style="letter-spacing:.1em;text-transform:uppercase;font-style:normal;color:var(--eyebrow)">Findings &amp; decision ·</span> Pending — to be added after the test runs.</p></div>
+    <div class="foot"><span>Validation · Module 3 + 5</span><span>05 / 08</span></div>
+  </div>
+</section>
+
+<!-- ================= 6 · LAUNCH ================= -->
+<section id="launch" data-title="Launch">
+  <div class="stage">
+    <div class="head">
+      <div><div class="eyebrow">Slide 9 · Launch</div><h2>Go-to-market &amp; success dashboard</h2></div>
+      <p class="sub">Comparator: Phase 1 = the algorithmic-rail arm. Phases 2–3 = the 10% holdout.</p>
+    </div>
+    <div class="launch grow">
+      <div class="gtm">
+        <div class="card hero" style="display:flex;flex-direction:column;gap:.75cqw">
+          <div class="label"><i class="dot"></i>GTM strategy</div>
+          <dl class="f"><dt>Goal</dt><dd><span class="pill placeholder">To be added · GTM lab</span></dd></dl>
+          <dl class="f"><dt>Audience</dt><dd><span class="pill o">Stranded Devotees</span></dd></dl>
+          <dl class="f"><dt>Tier</dt><dd><span class="pill placeholder">To be added · GTM lab</span></dd></dl>
+          <dl class="f"><dt>Channels</dt><dd><span class="pill placeholder">To be added</span><span class="pill placeholder">To be added</span></dd></dl>
+          <dl class="f"><dt>Rollout</dt><dd><span class="pill c">Phase 1 · algorithmic-rail arm</span><span class="pill c">Phases 2–3 · 10% holdout</span></dd></dl>
+          <dl class="f"><dt>Then</dt><dd><span class="pill t">Casual Browsers · Medium launch</span></dd></dl>
+        </div>
+        <div class="card">
+          <div class="decision">
+            <h4>Most likely: Iterate</h4>
+            <p>Keep the curated rail for Stranded Devotees, but refine it before expanding. A single list for the whole segment will suit some Devotees and miss others, so expect more titles started without a matching rise in sustained watching. That pattern points to improving the list, not killing the rail. Next: test A5 or A2 before expanding to Casual Browsers.</p>
+          </div>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:.9cqw;min-width:0">
+        <div class="kpis">
+          <div class="kpi pr"><span class="tag">Primary</span><h4>Rail-seen empty-session rate</h4><div class="tgt">≥ 2pp lower</div><p>Slot 2 on screen, no play or under 2 min. Two-sided p &lt; 0.05; 80% power to detect 2pp.</p></div>
+          <div class="kpi gr"><span class="tag">Guardrail</span><h4>All-session empty-session rate</h4><div class="tgt">Same direction</div><p>If it doesn't improve with the primary, treat it as cannibalization, not success.</p></div>
+          <div class="kpi se"><span class="tag">Success</span><h4>30+ minute session rate</h4><div class="tgt">CI low ≥ −1pp</div><p>Share of rail-seen sessions reaching a 30+ minute watch.</p></div>
+          <div class="kpi st"><span class="tag">Stop rule</span><h4>Watch minutes per user</h4><div class="tgt">≥ −2% ship</div><p>−2% to −5%: iterate. Below −5% at any weekly check: stop. Cancelled users count as zero.</p></div>
+        </div>
+        <div class="card badsig grow" style="padding:1cqw 1.1cqw">
+          <div class="label"><i class="dot"></i>Bad signals to watch for</div>
+          <table class="sig">
+            <thead><tr><th>Signal</th><th>Trigger</th><th>Checked</th><th>Owner → action</th></tr></thead>
+            <tbody>
+              <tr><td>Choose but not choose well</td><td>Primary improves ≥2pp, but the 30+ min rate CI includes 0</td><td>Weekly</td><td>Curator reviews rail titles abandoned under 10 min and tightens the list</td></tr>
+              <tr><td>Cannibalization</td><td>Rail plays rise, but the all-session empty rate CI includes 0</td><td>Weekly</td><td>PM: iterate on list content or slot</td></tr>
+              <tr><td>Watch minutes falling</td><td>Below −2%: iterate. Below −5%: pause</td><td>Weekly (test and Phase 3)</td><td>Analyst flags; PM decides within 24 hrs</td></tr>
+              <tr><td>Novelty fade</td><td>Final-week effect is under 50% of week-1 effect</td><td>At readout, by refresh week</td><td>PM: extend the test before shipping</td></tr>
+              <tr><td>Ticket spike</td><td>Spotlight-tagged tickets reach 2× the Week −1 baseline, or any already-watched-title report</td><td>Daily during test, weekly after</td><td>Support Ops escalates; Engineering checks the filter</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="foot"><span>Launch · Module 6</span><span>06 / 08</span></div>
+  </div>
+</section>
+
+<!-- ================= 7 · STORY ================= -->
+<section id="story" data-title="Story">
+  <div class="stage">
+    <div class="head">
+      <div><div class="eyebrow">Slide 10 · Story</div><h2>What I learned building this</h2></div>
+    </div>
+    <div class="story grow">
+      <div class="card"><div class="ic" style="background:var(--pink)">!</div><h3>Friction points</h3><p>I think my biggest issue, as pointed out to me by my wife, is that I was having issues in not thinking in the ways of a developer. I kept thinking of how I would fix the issue instead of how the outcome should be.</p></div>
+      <div class="card hero"><div class="ic" style="background:var(--orange)">★</div><h3>Aha! moment</h3><p>I think the biggest aha moment that I had was when I discovered how useful AI was. It really got me going in the right direction. The more I used it, the better I got at giving it instructions on what I was looking for. I spent a lot of time reading the responses and found that the majority of the information was great and usable. But at the same time found that I needed it to modify the response to fit into what I was trying to accomplish.</p></div>
+      <div class="card"><div class="ic" style="background:var(--cyan)">✓</div><h3>Key learnings</h3><p>I was really surprised on how much help I was able to glean from AI. It really helped guide me in the right direction and sometimes just told me I was wrong. And there were times when I told it to just do what I said.</p></div>
+      <div class="card"><div class="ic" style="background:var(--teal)">→</div><h3>What is next</h3><p>As of right now, I have paid for the membership in the school. With that, I am going to continue with the classes and see if I can change my mind about the PM role. Next class is <strong style="color:var(--orange)">PM with AI</strong>.</p></div>
+    </div>
+    <div class="foot"><span>Story · Reflection</span><span>07 / 08</span></div>
+  </div>
+</section>
+
+<!-- ================= 8 · THANK YOU ================= -->
+<section class="thanks" id="thanks" data-title="Submit">
+  <div class="stage">
+    <div class="eyebrow">Final Project · Submission</div>
+    <h2>Thank you<span>.</span></h2>
+    <p style="font-size:1.3cqw;max-width:50cqw;line-height:1.45">StreamLine Spotlight: from endless scrolling to something worth watching.</p>
+    <div class="row">
+      <a class="repobig" href="https://github.com/CptnKilt/pm-final-project" target="_blank" rel="noopener">github.com/CptnKilt/pm-final-project</a>
+    </div>
+    <div class="row">
+      <span class="pill o" style="font-size:1.08cqw;padding:.5cqw 1cqw">David McCormack - PM Cohort - Oct 2026</span>
+      <a class="btn ghost" href="https://lovable.dev/preview/urJpMXXhsOEPYlVyt1z5oI2jRX13iXhy" target="_blank" rel="noopener">View prototype</a>
+    </div>
+    <div class="submit" style="margin-top:1cqw"><i></i>Submit to the learning platform</div>
+    <div class="foot"><span>StreamLine Spotlight</span><span>08 / 08</span></div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var secs=[].slice.call(document.querySelectorAll('section'));
+  var dots=document.getElementById('dots'), bar=document.getElementById('progress');
+  secs.forEach(function(s,i){
+    var a=document.createElement('a'); a.href='#'+s.id; a.setAttribute('aria-label',s.dataset.title);
+    a.innerHTML='<span>'+String(i+1).padStart(2,'0')+' · '+s.dataset.title+'</span>';
+    a.addEventListener('click',function(e){e.preventDefault();go(i);});
+    dots.appendChild(a);
+  });
+  var links=[].slice.call(dots.children);
+  function cur(){var y=window.scrollY+window.innerHeight/2,c=0;secs.forEach(function(s,i){if(s.offsetTop<=y)c=i;});return c;}
+  function go(i){i=Math.max(0,Math.min(secs.length-1,i));secs[i].scrollIntoView({behavior:'smooth'});}
+  function upd(){var h=document.documentElement.scrollHeight-window.innerHeight;bar.style.width=(h>0?window.scrollY/h*100:0)+'%';var c=cur();links.forEach(function(l,i){l.classList.toggle('on',i===c);});}
+  window.addEventListener('scroll',upd,{passive:true});window.addEventListener('resize',upd);upd();
+  document.addEventListener('keydown',function(e){
+    if(e.target.closest&&e.target.closest('input,textarea'))return;
+    var c=cur(),k=e.key;
+    if(k==='ArrowDown'||k==='PageDown'||(k===' '&&!e.shiftKey)){e.preventDefault();go(c+1);}
+    else if(k==='ArrowUp'||k==='PageUp'||(k===' '&&e.shiftKey)){e.preventDefault();go(c-1);}
+    else if(k==='Home'){e.preventDefault();go(0);}
+    else if(k==='End'){e.preventDefault();go(secs.length-1);}
+    else if(k==='Escape'){e.preventDefault();if(document.activeElement)document.activeElement.blur();go(0);}
+  });
+})();
+</script>
+</body>
+</html>
